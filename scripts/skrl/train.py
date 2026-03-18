@@ -57,10 +57,37 @@ parser.add_argument(
 parser.add_argument(
     "--ray-proc-id", "-rid", type=int, default=None, help="Automatically configured by Ray integration, otherwise None."
 )
+
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
 args_cli, hydra_args = parser.parse_known_args()
+import gymnasium as gym
+import torch
+import os
+if args_cli.ml_framework.startswith("torch"):
+    from skrl.utils.runner.torch import Runner
+
+elif args_cli.ml_framework.startswith("jax"):
+    from skrl.utils.runner.jax import Runner
+    import jax.numpy as np
+    import logging
+
+    # --- prevent terminal overcrowding ---
+    logging.getLogger("jax").setLevel(logging.WARNING)
+    logging.getLogger("absl").setLevel(logging.WARNING)
+    # --- JAX VRAM FIX (THE HARD CAP) ---
+    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "true"
+    os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.3"
+# -----------------------------------
+    # --- THE HEADLESS SYNC FIX ---
+    class SyncWrapper(gym.Wrapper):
+        def step(self, action):
+            step_returns = self.env.step(action)
+            # Use the real PyTorch to block the CPU and wait for PhysX
+            torch.cuda.synchronize()
+            return step_returns
+
 # always enable cameras to record video
 if args_cli.video:
     args_cli.enable_cameras = True
@@ -80,7 +107,7 @@ import random
 import time
 from datetime import datetime
 
-import gymnasium as gym
+
 import skrl
 from packaging import version
 
@@ -93,10 +120,6 @@ if version.parse(skrl.__version__) < version.parse(SKRL_VERSION):
     )
     exit()
 
-if args_cli.ml_framework.startswith("torch"):
-    from skrl.utils.runner.torch import Runner
-elif args_cli.ml_framework.startswith("jax"):
-    from skrl.utils.runner.jax import Runner
 
 from isaaclab.envs import (
     DirectMARLEnv,
@@ -199,11 +222,17 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # create isaac environment
     env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
+    
+    # --- APPLY THE HEADLESS SYNC FIX ---
+    if args_cli.ml_framework.startswith("jax"):
+        env = SyncWrapper(env)
+    # -----------------------------------
 
     # convert to single-agent instance if required by the RL algorithm
     if isinstance(env.unwrapped, DirectMARLEnv) and algorithm in ["ppo"]:
         env = multi_agent_to_single_agent(env)
-
+    if args_cli.ml_framework.startswith("jax"):
+        env = SyncWrapper(env)
     # wrap for video recording
     if args_cli.video:
         video_kwargs = {
@@ -224,6 +253,42 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     # configure and instantiate the skrl runner
     # https://skrl.readthedocs.io/en/latest/api/utils/runner.html
     runner = Runner(env, agent_cfg)
+
+    #-----------------------------
+
+    writer = runner.agent.writer 
+
+    # 2. Patch record_transition with a FORCE FLUSH
+    original_record_transition = runner.agent.record_transition
+
+    def patched_record_transition(*args, **kwargs):
+        # SAC call: record_transition(states, actions, rewards, next_states, ...)
+        actions = kwargs.get('actions', args[1] if len(args) > 1 else None)
+        timestep = kwargs.get('timestep', args[7] if len(args) > 7 else 0)
+
+        if actions is not None and writer is not None:
+            # We use the raw writer to ensure the data is recorded NOW
+            if args_cli.ml_framework.startswith("torch"):
+                writer.add_scalar("Actions/Action_Max", torch.max(actions).item(), timestep)
+                writer.add_scalar("Actions/Action_Min", torch.min(actions).item(), timestep)
+                writer.add_scalar("Actions/Action_Mean_Abs", torch.mean(torch.abs(actions)).item(), timestep)
+                
+                # Flush every 10 steps to ensure we see the "crash" data
+                if timestep % 10 == 0:
+                    writer.flush()
+            elif args_cli.ml_framework.startswith("jax"):
+                writer.add_scalar("Actions/Action_Max", np.max(actions).item(), timestep)
+                writer.add_scalar("Actions/Action_Min", np.min(actions).item(), timestep)
+                writer.add_scalar("Actions/Action_Mean_Abs", np.mean(np.abs(actions)).item(), timestep)
+
+            # Flush every 10 steps to ensure we see the "crash" data
+            if timestep % 10 == 0:
+                writer.flush()
+
+        return original_record_transition(*args, **kwargs)
+
+    runner.agent.record_transition = patched_record_transition
+    #-----------------------------
 
     # load checkpoint (if specified)
     if resume_path:
