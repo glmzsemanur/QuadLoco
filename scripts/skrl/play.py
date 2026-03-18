@@ -113,7 +113,7 @@ import isaaclab_tasks  # noqa: F401
 from isaaclab_tasks.utils import get_checkpoint_path
 from isaaclab_tasks.utils.hydra import hydra_task_config
 
-import QuadLoco.tasks  # noqa: F401
+# PLACEHOLDER: Extension template (do not remove this comment)
 
 # config shortcuts
 if args_cli.agent is None:
