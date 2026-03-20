@@ -15,6 +15,7 @@ import sys
 from pathlib import Path
 
 from isaaclab.app import AppLauncher
+import torch
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with Stable-Baselines3.")
@@ -24,7 +25,7 @@ parser.add_argument("--video_interval", type=int, default=2000, help="Interval b
 parser.add_argument("--num_envs", type=int, default=None, help="Number of environments to simulate.")
 parser.add_argument("--task", type=str, default=None, help="Name of the task.")
 parser.add_argument(
-    "--agent", type=str, default="sb3_cfg_entry_point", help="Name of the RL agent configuration entry point."
+    "--agent", type=str, default=None, help="Name of the RL agent configuration entry point."
 )
 parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
 parser.add_argument("--log_interval", type=int, default=100_000, help="Log data every n timesteps.")
@@ -40,6 +41,9 @@ parser.add_argument(
 parser.add_argument(
     "--ray-proc-id", "-rid", type=int, default=None, help="Automatically configured by Ray integration, otherwise None."
 )
+parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
+parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
+
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -83,9 +87,26 @@ from datetime import datetime
 
 import gymnasium as gym
 import numpy as np
-from stable_baselines3 import PPO
-from stable_baselines3.common.callbacks import CheckpointCallback, LogEveryNTimesteps
+# from stable_baselines3 import PPO
+if args_cli.ml_framework == "torch":
+    if args_cli.algorithm.lower() == "ppo":
+        from stable_baselines3 import PPO as RLAlgorithm
+    if args_cli.algorithm.lower() == "sac":
+        from stable_baselines3 import SAC as RLAlgorithm
+elif args_cli.ml_framework.lower() == "jax":
+    logging.getLogger("jax").setLevel(logging.WARNING)
+    logging.getLogger("absl").setLevel(logging.WARNING)
+    import jax.nn
+    if args_cli.algorithm.lower() == "ppo":
+        from sbx import PPO as RLAlgorithm
+    if args_cli.algorithm.lower() == "sac":
+        from sbx import SAC as RLAlgorithm
+        
+from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback, LogEveryNTimesteps
 from stable_baselines3.common.vec_env import VecNormalize
+if args_cli.agent is None:
+    algorithm = args_cli.algorithm.lower()
+    args_cli.agent = f"sb3_{algorithm}_cfg_entry_point"
 
 from isaaclab.envs import (
     DirectMARLEnv,
@@ -99,12 +120,46 @@ from isaaclab.utils.io import dump_yaml
 
 from isaaclab_rl.sb3 import Sb3VecEnvWrapper, process_sb3_cfg
 
-import isaaclab_tasks  # noqa: F401
+import QuadLoco  # noqa: F401
 from isaaclab_tasks.utils.hydra import hydra_task_config
 
 # import logger
 logger = logging.getLogger(__name__)
 # PLACEHOLDER: Extension template (do not remove this comment)
+import wandb
+from wandb.integration.sb3 import WandbCallback
+class AdditionalLoggerCallback(BaseCallback):
+    def _on_step(self) -> bool:
+        # 1. Log Actions
+        actions = self.locals.get("actions")
+        if actions is not None:
+            wandb.log({
+                "actions/abs_mean_action": float(np.mean(np.abs(actions))),
+                "actions/max_action": float(np.max(actions)),
+                "actions/min_action": float(np.min(actions)),
+            }, commit=False)
+        # 2. Read Native Isaac Lab Data directly
+        try:
+            env = self.training_env.unwrapped
+            # Isaac Lab natively dumps the episodic rewards here when robots reset
+            if "log" in env.extras:
+                native_data = {}
+                # Iterate through the flat dictionary (Keys look like: "episode/reward_track_vel")
+                for key, value in env.extras["log"].items():
+                    try:
+                        # Safely extract the number from PyTorch tensors
+                        if isinstance(value, torch.Tensor):
+                            val = value.item()
+                        else:
+                            val = float(value)
+                        native_data[f"isaac_native/{key}"] = val
+                    except (ValueError, TypeError):
+                        continue
+                if native_data:
+                    wandb.log(native_data, commit=False)  
+        except AttributeError:
+            pass
+        return True
 
 
 @hydra_task_config(args_cli.task, args_cli.agent)
@@ -161,7 +216,14 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # create isaac environment
     env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
-
+    run = wandb.init(
+        project="sb3_self_eval",
+        name="sac_jax_0.0006_ent_coef_act_2", 
+        config=env_cfg,
+        sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+        monitor_gym=True,  # auto-upload the videos of agents playing the game
+        save_code=True,  # optional
+    )
     # convert to single-agent instance if required by the RL algorithm
     if isinstance(env.unwrapped, DirectMARLEnv):
         env = multi_agent_to_single_agent(env)
@@ -182,7 +244,11 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # wrap around environment for stable baselines
     env = Sb3VecEnvWrapper(env, fast_variant=not args_cli.keep_all_info)
-
+    import numpy as np
+    if args_cli.algorithm == "sac":
+        env.action_space = gym.spaces.Box(
+            low=-2, high=2, shape=(12,), dtype=np.float32
+        )
     norm_keys = {"normalize_input", "normalize_value", "clip_obs"}
     norm_args = {}
     for key in norm_keys:
@@ -200,15 +266,17 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
             gamma=agent_cfg["gamma"],
             clip_reward=np.inf,
         )
-
+    checkpoint_interval = agent_cfg.pop("checkpoint_interval")
     # create agent from stable baselines
-    agent = PPO(policy_arch, env, verbose=1, tensorboard_log=log_dir, **agent_cfg)
+    if args_cli.ml_framework == "jax":
+        agent_cfg["policy_kwargs"]["activation_fn"] = jax.nn.elu
+    agent = RLAlgorithm(policy_arch, env, verbose=0, tensorboard_log=log_dir, **agent_cfg) # verbose=0/1/2 for no/yes terminal logs
     if args_cli.checkpoint is not None:
         agent = agent.load(args_cli.checkpoint, env, print_system_info=True)
 
     # callbacks for agent
-    checkpoint_callback = CheckpointCallback(save_freq=1000, save_path=log_dir, name_prefix="model", verbose=2)
-    callbacks = [checkpoint_callback, LogEveryNTimesteps(n_steps=args_cli.log_interval)]
+    checkpoint_callback = CheckpointCallback(save_freq=checkpoint_interval, save_path=log_dir, name_prefix="model", verbose=2)
+    callbacks = [checkpoint_callback, LogEveryNTimesteps(n_steps=args_cli.log_interval), AdditionalLoggerCallback(), WandbCallback(gradient_save_freq=10, model_save_path=f"models/{run.id}", verbose=2)] 
 
     # train the agent
     with contextlib.suppress(KeyboardInterrupt):

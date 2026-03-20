@@ -50,8 +50,8 @@ parser.add_argument(
 parser.add_argument(
     "--algorithm",
     type=str,
-    default="PPO",
-    choices=["AMP", "PPO", "IPPO", "MAPPO"],
+    default="ppo",
+    choices=["ppo", "sac"],
     help="The RL algorithm used for training the skrl agent.",
 )
 parser.add_argument(
@@ -249,6 +249,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # wrap around environment for skrl
     env = SkrlVecEnvWrapper(env, ml_framework=args_cli.ml_framework)  # same as: `wrap_env(env, wrapper="auto")`
+    
+    if args_cli.algorithm.lower() == "sac":
+        # SAC requires a Box action space, so we set it here if it's not already set
+        import numpy as np
+        env.unwrapped.single_action_space = gym.spaces.Box(
+            low=-1, high=1, shape=(12,), dtype=np.float32
+        )
 
     # configure and instantiate the skrl runner
     # https://skrl.readthedocs.io/en/latest/api/utils/runner.html
@@ -262,7 +269,6 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     original_record_transition = runner.agent.record_transition
 
     def patched_record_transition(*args, **kwargs):
-        # SAC call: record_transition(states, actions, rewards, next_states, ...)
         actions = kwargs.get('actions', args[1] if len(args) > 1 else None)
         timestep = kwargs.get('timestep', args[7] if len(args) > 7 else 0)
 
