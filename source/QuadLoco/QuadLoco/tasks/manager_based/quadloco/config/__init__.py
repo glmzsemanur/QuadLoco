@@ -12,4 +12,4 @@ Reference:
 """
 
 from . import isaaclab_a1
-from . import robotlab_go2w
+from . import robotlab_a1

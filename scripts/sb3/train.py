@@ -43,7 +43,8 @@ parser.add_argument(
 )
 parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
 parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
-
+parser.add_argument("--wandb_name", type=str, default="", help="Run name for the wandb log")
+parser.add_argument("--action_range", type=int, default="1", help="If sac, spesify the action range")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -94,6 +95,9 @@ if args_cli.ml_framework == "torch":
     if args_cli.algorithm.lower() == "sac":
         from stable_baselines3 import SAC as RLAlgorithm
 elif args_cli.ml_framework.lower() == "jax":
+    # to prevent over-preallocation of vram, we manually allocate it
+    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "true"
+    os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" 
     logging.getLogger("jax").setLevel(logging.WARNING)
     logging.getLogger("absl").setLevel(logging.WARNING)
     import jax.nn
@@ -128,39 +132,110 @@ logger = logging.getLogger(__name__)
 # PLACEHOLDER: Extension template (do not remove this comment)
 import wandb
 from wandb.integration.sb3 import WandbCallback
+
+import numpy as np
+
 class AdditionalLoggerCallback(BaseCallback):
+    def __init__(self, scalar_freq: int = 1, dist_freq: int = 2500, verbose=0):
+        super().__init__(verbose)
+        self.scalar_freq = scalar_freq  # Fast logging for numbers 
+        self.dist_freq = dist_freq      # Slower logging for heavy histograms
+
     def _on_step(self) -> bool:
-        # 1. Log Actions
         actions = self.locals.get("actions")
+        log_dict = {}
+        
         if actions is not None:
-            wandb.log({
-                "actions/abs_mean_action": float(np.mean(np.abs(actions))),
-                "actions/max_action": float(np.max(actions)),
-                "actions/min_action": float(np.min(actions)),
-            }, commit=False)
-        # 2. Read Native Isaac Lab Data directly
+            actions_np = np.asarray(actions)
+            
+            # 1. Log Scalar Actions (High Frequency OR The Very First Step)
+            if self.n_calls == 1 or self.n_calls % self.scalar_freq == 0:
+                log_dict.update({
+                    "actions/abs_mean_action": float(np.mean(np.abs(actions_np))),
+                    "actions/max_action": float(np.max(actions_np)),
+                    "actions/min_action": float(np.min(actions_np)),
+                })
+            
+            # 2. Log Action Distributions (Low Frequency OR The Very First Step)
+            if self.n_calls == 1 or self.n_calls % self.dist_freq == 0:
+                # The combined graph
+                log_dict["action_distributions/All_Joints"] = wandb.Histogram(actions_np.flatten())
+                
+                # The individual joint graphs
+                n_actions = actions_np.shape[1]
+                for i in range(n_actions):
+                    log_dict[f"action_distributions/joint_{i}"] = wandb.Histogram(actions_np[:, i])
+
+        # 3. Read Native Isaac Lab Data directly
         try:
             env = self.training_env.unwrapped
-            # Isaac Lab natively dumps the episodic rewards here when robots reset
             if "log" in env.extras:
-                native_data = {}
-                # Iterate through the flat dictionary (Keys look like: "episode/reward_track_vel")
                 for key, value in env.extras["log"].items():
                     try:
-                        # Safely extract the number from PyTorch tensors
                         if isinstance(value, torch.Tensor):
                             val = value.item()
                         else:
                             val = float(value)
-                        native_data[f"isaac_native/{key}"] = val
+                        log_dict[f"isaac_native/{key}"] = val
                     except (ValueError, TypeError):
                         continue
-                if native_data:
-                    wandb.log(native_data, commit=False)  
         except AttributeError:
             pass
+            
+        # 4. Push everything we gathered this step to WandB simultaneously
+        if log_dict:
+            # # Inject the true SB3 timestep directly into the data payload
+            log_dict["timestep"] = self.num_timesteps
+            
+            # Log normally without the step= override!
+            wandb.log(log_dict, commit=False)
+            
         return True
+    def _on_training_end(self) -> None:
+        """
+        This triggers exactly once when the total_timesteps limit is reached.
+        We will draw the true, smooth Gaussian KDE curves here!
+        """
+        print("🎉 Training complete! Generating final continuous Gaussian plots...")
+        
+        # We can safely use Matplotlib here because training is over!
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        sns.set_theme()
+        
+        actions = self.locals.get("actions")
+        if actions is not None:
+            actions_np = np.asarray(actions)
+            n_actions = actions_np.shape[1]
+            
+            # Create a large, beautiful plot
+            fig, ax = plt.subplots(figsize=(12, 8))
+            
+            # Plot the smooth continuous Gaussian curve for every joint
+            for i in range(n_actions):
+                # kde=True generates the continuous Probability Density Function
+                sns.kdeplot(actions_np[:, i], fill=True, alpha=0.2, label=f"Joint {i}", bw_adjust=1.5)
+                
+            plt.title(f"Action Distribution (Continuous Gaussian PDF) at Final Step", fontsize=16)
+            plt.xlabel("Action Value (Position)", fontsize=14)
+            plt.ylabel("Probability Density", fontsize=14)
+            
+            # Put the legend outside the graph so it doesn't cover the curves
+            plt.legend(bbox_to_anchor=(1.05, 1), loc='best')
+            plt.tight_layout()
+            # Create a unique filename using the current date and time
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            save_path = f"final_action_distributions_{args_cli.wandb_name}_{timestamp}.pdf"
 
+            plt.savefig(save_path, format="pdf", bbox_inches="tight")
+            # Send the high-res image to WandB
+            wandb.log({"action_distributions/Final_Smooth_Gaussians": wandb.Image(fig)})
+            
+            # Clean up RAM
+            plt.close(fig)
+            print("📊 Final Gaussian distributions uploaded to WandB!")
 
 @hydra_task_config(args_cli.task, args_cli.agent)
 def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agent_cfg: dict):
@@ -218,7 +293,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
     run = wandb.init(
         project="sb3_self_eval",
-        name="sac_jax_0.0006_ent_coef_act_2", 
+        name=args_cli.wandb_name, 
         config=env_cfg,
         sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
         monitor_gym=True,  # auto-upload the videos of agents playing the game
@@ -247,7 +322,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     import numpy as np
     if args_cli.algorithm == "sac":
         env.action_space = gym.spaces.Box(
-            low=-2, high=2, shape=(12,), dtype=np.float32
+            low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32
         )
     norm_keys = {"normalize_input", "normalize_value", "clip_obs"}
     norm_args = {}
@@ -276,7 +351,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # callbacks for agent
     checkpoint_callback = CheckpointCallback(save_freq=checkpoint_interval, save_path=log_dir, name_prefix="model", verbose=2)
-    callbacks = [checkpoint_callback, LogEveryNTimesteps(n_steps=args_cli.log_interval), AdditionalLoggerCallback(), WandbCallback(gradient_save_freq=10, model_save_path=f"models/{run.id}", verbose=2)] 
+    callbacks = [checkpoint_callback, LogEveryNTimesteps(n_steps=args_cli.log_interval), WandbCallback(gradient_save_freq=10, model_save_path=f"models/{run.id}", verbose=2)] # AdditionalLoggerCallback(), 
 
     # train the agent
     with contextlib.suppress(KeyboardInterrupt):
@@ -296,7 +371,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         env.save(os.path.join(log_dir, "model_vecnormalize.pkl"))
 
     print(f"Training time: {round(time.time() - start_time, 2)} seconds")
-
+    # --- THE FIX ---
+    print("Waiting for WandB to finish syncing files...")
+    wandb.finish()  # Forces the script to wait until the image is safely in the cloud
+    # ---------------
+ 
+    # close the simulator
+    env.close()
     # close the simulator
     env.close()
 

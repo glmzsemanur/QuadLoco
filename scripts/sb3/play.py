@@ -20,10 +20,10 @@ parser.add_argument("--video_length", type=int, default=200, help="Length of the
 parser.add_argument(
     "--disable_fabric", action="store_true", default=False, help="Disable fabric and use USD I/O operations."
 )
-parser.add_argument("--num_envs", type=int, default=None, help="Number of environments to simulate.")
+parser.add_argument("--num_envs", type=int, default=64, help="Number of environments to simulate.")
 parser.add_argument("--task", type=str, default=None, help="Name of the task.")
 parser.add_argument(
-    "--agent", type=str, default="sb3_cfg_entry_point", help="Name of the RL agent configuration entry point."
+    "--agent", type=str, default="sb3_sac_cfg_entry_point", help="Name of the RL agent configuration entry point."
 )
 parser.add_argument("--checkpoint", type=str, default=None, help="Path to model checkpoint.")
 parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
@@ -44,6 +44,9 @@ parser.add_argument(
     default=False,
     help="Use a slower SB3 wrapper but keep all the extra training info.",
 )
+parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
+parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
+parser.add_argument("--action_range", type=int, default=3, help="If sac, specify the action range")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -67,7 +70,26 @@ import time
 
 import gymnasium as gym
 import torch
-from stable_baselines3 import PPO
+# from stable_baselines3 import PPO
+import logging
+from stable_baselines3.common.vec_env import VecNormalize
+
+# Dynamic RL Algorithm loading based on CLI args
+if args_cli.ml_framework == "torch":
+    if args_cli.algorithm.lower() == "ppo":
+        from stable_baselines3 import PPO as RLAlgorithm
+    elif args_cli.algorithm.lower() == "sac":
+        from stable_baselines3 import SAC as RLAlgorithm
+elif args_cli.ml_framework.lower() == "jax":
+    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "true"
+    os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" 
+    logging.getLogger("jax").setLevel(logging.WARNING)
+    logging.getLogger("absl").setLevel(logging.WARNING)
+    import jax.nn
+    if args_cli.algorithm.lower() == "ppo":
+        from sbx import PPO as RLAlgorithm
+    elif args_cli.algorithm.lower() == "sac":
+        from sbx import SAC as RLAlgorithm
 from stable_baselines3.common.vec_env import VecNormalize
 
 from isaaclab.envs import (
@@ -82,7 +104,7 @@ from isaaclab.utils.dict import print_dict
 from isaaclab_rl.sb3 import Sb3VecEnvWrapper, process_sb3_cfg
 from isaaclab_rl.utils.pretrained_checkpoint import get_published_pretrained_checkpoint
 
-import isaaclab_tasks  # noqa: F401
+import QuadLoco  # noqa: F401
 from isaaclab_tasks.utils.hydra import hydra_task_config
 from isaaclab_tasks.utils.parse_cfg import get_checkpoint_path
 
@@ -94,7 +116,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     """Play with stable-baselines agent."""
     # grab task name for checkpoint path
     task_name = args_cli.task.split(":")[-1]
-    train_task_name = task_name.replace("-Play", "")
+    train_task_name = task_name.replace("-play", "")
     # randomly sample a seed if seed = -1
     if args_cli.seed == -1:
         args_cli.seed = random.randint(0, 10000)
@@ -153,6 +175,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         env = gym.wrappers.RecordVideo(env, **video_kwargs)
     # wrap around environment for stable baselines
     env = Sb3VecEnvWrapper(env, fast_variant=not args_cli.keep_all_info)
+    import numpy as np
+    if args_cli.algorithm.lower() == "sac":
+        env.action_space = gym.spaces.Box(
+            low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32)
 
     vec_norm_path = checkpoint_path.replace("/model", "/model_vecnormalize").replace(".zip", ".pkl")
     vec_norm_path = Path(vec_norm_path)
@@ -175,7 +201,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # create agent from stable baselines
     print(f"Loading checkpoint from: {checkpoint_path}")
-    agent = PPO.load(checkpoint_path, env, print_system_info=True)
+    agent = RLAlgorithm.load(checkpoint_path, env, print_system_info=True)
 
     dt = env.unwrapped.step_dt
 
