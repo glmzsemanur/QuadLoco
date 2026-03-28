@@ -1,2 +1,6 @@
 
 [TRIAL 0] STARTING ---
+[GATE 0] Reward: 1.27 +/- 5.50 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 1] STARTING ---

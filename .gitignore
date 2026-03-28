@@ -13,6 +13,8 @@
 **/*.usda
 **/*.usdc
 **/*.usdz
+*.db
+*.zip
 
 # Python
 .DS_Store
@@ -73,3 +75,5 @@ tests/
 # TacSL sensor
 **/tactile_record/*
 **/gelsight_r15_data/*
+
+scripts/sb3/optuna/
