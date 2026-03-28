@@ -1,0 +1,830 @@
+[TRIAL 0] START ---
+[TRIAL 0] Phase 1: 4m Training...
+[TRIAL 0] Result @ 4m: 3.30, 6.80
+
+[TRIAL 1] START ---
+[TRIAL 1] Phase 1: 4m Training...
+[TRIAL 1] Result @ 4m: 1.35, 5.23
+
+[TRIAL 2] START ---
+[TRIAL 2] Phase 1: 4m Training...
+[TRIAL 2] Result @ 4m: -0.08, 0.23
+
+[TRIAL 3] START ---
+[TRIAL 3] Phase 1: 4m Training...
+[TRIAL 3] Result @ 4m: 12.70, 10.84
+
+[TRIAL 4] START ---
+[TRIAL 4] Phase 1: 4m Training...
+[TRIAL 4] Result @ 4m: 0.85, 3.58
+
+[TRIAL 5] START ---
+[TRIAL 5] Phase 1: 4m Training...
+[TRIAL 5] Result @ 4m: -0.74, 0.10
+
+[TRIAL 6] START ---
+[TRIAL 6] Phase 1: 4m Training...
+[TRIAL 6] Result @ 4m: -0.80, 0.19
+
+[TRIAL 7] START ---
+[TRIAL 7] Phase 1: 4m Training...
+[TRIAL 7] Result @ 4m: -0.56, 0.10
+
+[TRIAL 8] START ---
+[TRIAL 8] Phase 1: 4m Training...
+[TRIAL 8] Result @ 4m: 3.42, 6.77
+
+[TRIAL 9] START ---
+[TRIAL 9] Phase 1: 4m Training...
+[TRIAL 9] Result @ 4m: 3.86, 7.06
+
+[TRIAL 10] START ---
+
+[TRIAL 11] START ---
+[TRIAL 11] Phase 1: 4m Training...
+[TRIAL 11] Result @ 4m: -0.20, 0.30
+
+[TRIAL 12] START ---
+[TRIAL 12] Phase 1: 4m Training...
+[TRIAL 12] Result @ 4m: -0.14, 0.20
+
+[TRIAL 13] START ---
+[TRIAL 13] Phase 1: 4m Training...
+[TRIAL 13] Result @ 4m: 2.10, 4.91
+
+[TRIAL 14] START ---
+[TRIAL 14] Phase 1: 4m Training...
+[TRIAL 14] Result @ 4m: -0.05, 0.35
+
+[TRIAL 15] START ---
+[TRIAL 15] Phase 1: 4m Training...
+[TRIAL 15] Result @ 4m: 7.18, 7.84
+
+[TRIAL 16] START ---
+[TRIAL 16] Phase 1: 4m Training...
+[TRIAL 16] Result @ 4m: 8.51, 8.76
+
+[TRIAL 17] START ---
+[TRIAL 17] Phase 1: 4m Training...
+[ERROR] Trial 17: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.31 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 18] START ---
+[TRIAL 18] Phase 1: 4m Training...
+[TRIAL 18] Result @ 4m: 8.66, 10.86
+
+[TRIAL 19] START ---
+[TRIAL 19] Phase 1: 4m Training...
+[TRIAL 19] Result @ 4m: -0.19, 0.22
+
+[TRIAL 20] START ---
+[TRIAL 20] Phase 1: 4m Training...
+[TRIAL 20] Result @ 4m: 3.69, 6.89
+
+[TRIAL 21] START ---
+
+[TRIAL 22] START ---
+[TRIAL 22] Phase 1: 4m Training...
+[TRIAL 22] Result @ 4m: -0.40, 0.11
+
+[TRIAL 23] START ---
+
+[TRIAL 24] START ---
+[TRIAL 24] Phase 1: 4m Training...
+[TRIAL 24] Result @ 4m: 2.25, 6.30
+
+[TRIAL 25] START ---
+[TRIAL 25] Phase 1: 4m Training...
+[TRIAL 25] Result @ 4m: 10.79, 12.44
+
+[TRIAL 26] START ---
+[TRIAL 26] Phase 1: 4m Training...
+[ERROR] Trial 26: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 71.50 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 27] START ---
+[TRIAL 27] Phase 1: 4m Training...
+[TRIAL 27] Result @ 4m: 9.68, 11.31
+
+[TRIAL 28] START ---
+
+[TRIAL 29] START ---
+[TRIAL 29] Phase 1: 4m Training...
+[ERROR] Trial 29: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 65.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 30] START ---
+[TRIAL 30] Phase 1: 4m Training...
+[ERROR] Trial 30: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 73.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 31] START ---
+[TRIAL 31] Phase 1: 4m Training...
+[TRIAL 31] Result @ 4m: 7.63, 10.62
+
+[TRIAL 32] START ---
+[TRIAL 32] Phase 1: 4m Training...
+[TRIAL 32] Result @ 4m: 8.74, 10.34
+
+[TRIAL 33] START ---
+[TRIAL 33] Phase 1: 4m Training...
+[TRIAL 33] Result @ 4m: 4.23, 7.31
+
+[TRIAL 34] START ---
+[TRIAL 34] Phase 1: 4m Training...
+[TRIAL 34] Result @ 4m: -0.70, 0.14
+
+[TRIAL 35] START ---
+[TRIAL 35] Phase 1: 4m Training...
+[TRIAL 35] Result @ 4m: 1.20, 4.90
+
+[TRIAL 36] START ---
+
+[TRIAL 37] START ---
+
+[TRIAL 38] START ---
+
+[TRIAL 39] START ---
+[TRIAL 39] Phase 1: 4m Training...
+[ERROR] Trial 39: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.50 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 40] START ---
+[TRIAL 40] Phase 1: 4m Training...
+[ERROR] Trial 40: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 69.50 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 41] START ---
+
+[TRIAL 42] START ---
+
+[TRIAL 43] START ---
+[TRIAL 43] Phase 1: 4m Training...
+[ERROR] Trial 43: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 44] START ---
+[TRIAL 44] Phase 1: 4m Training...
+[ERROR] Trial 44: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 45] START ---
+
+[TRIAL 46] START ---
+[TRIAL 46] Phase 1: 4m Training...
+[ERROR] Trial 46: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 71.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 47] START ---
+
+[TRIAL 48] START ---
+
+[TRIAL 49] START ---
+
+[TRIAL 50] START ---
+
+[TRIAL 51] START ---
+[TRIAL 51] Phase 1: 4m Training...
+[TRIAL 51] Result @ 4m: 13.58, 12.13
+
+[TRIAL 52] START ---
+[TRIAL 52] Phase 1: 4m Training...
+[TRIAL 52] Result @ 4m: 7.38, 9.90
+
+[TRIAL 53] START ---
+[TRIAL 53] Phase 1: 4m Training...
+[ERROR] Trial 53: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.75 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 54] START ---
+[TRIAL 54] Phase 1: 4m Training...
+[ERROR] Trial 54: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.75 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 55] START ---
+[TRIAL 55] Phase 1: 4m Training...
+[ERROR] Trial 55: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 62.25 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 56] START ---
+[TRIAL 56] Phase 1: 4m Training...
+[ERROR] Trial 56: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 57] START ---
+[TRIAL 57] Phase 1: 4m Training...
+[ERROR] Trial 57: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.06 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 58] START ---
+[TRIAL 58] Phase 1: 4m Training...
+[ERROR] Trial 58: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 70.06 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 59] START ---
+[TRIAL 59] Phase 1: 4m Training...
+[ERROR] Trial 59: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 61.88 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 60] START ---
+[TRIAL 60] Phase 1: 4m Training...
+[ERROR] Trial 60: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 61] START ---
+[TRIAL 61] Phase 1: 4m Training...
+[ERROR] Trial 61: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 69.50 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 62] START ---
+[TRIAL 62] Phase 1: 4m Training...
+[ERROR] Trial 62: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.00 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 63] START ---
+[TRIAL 63] Phase 1: 4m Training...
+[ERROR] Trial 63: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 79.00 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 64] START ---
+[TRIAL 64] Phase 1: 4m Training...
+[TRIAL 64] Result @ 4m: 8.50, 9.69
+
+[TRIAL 65] START ---
+[TRIAL 65] Phase 1: 4m Training...
+[TRIAL 65] Result @ 4m: 3.05, 7.10
+
+[TRIAL 66] START ---
+
+[TRIAL 67] START ---
+
+[TRIAL 68] START ---
+
+[TRIAL 69] START ---
+[TRIAL 69] Phase 1: 4m Training...
+[ERROR] Trial 69: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 70] START ---
+[TRIAL 70] Phase 1: 4m Training...
+[ERROR] Trial 70: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 71] START ---
+[TRIAL 71] Phase 1: 4m Training...
+[ERROR] Trial 71: INTERNAL: Failed to initialize BLAS support
+
+[TRIAL 72] START ---
+[TRIAL 72] Phase 1: 4m Training...
+[ERROR] Trial 72: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 73] START ---
+[TRIAL 73] Phase 1: 4m Training...
+[ERROR] Trial 73: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 74] START ---
+[TRIAL 74] Phase 1: 4m Training...
+[ERROR] Trial 74: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 81.75 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 75] START ---
+[TRIAL 75] Phase 1: 4m Training...
+[ERROR] Trial 75: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 71.75 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 76] START ---
+[TRIAL 76] Phase 1: 4m Training...
+[TRIAL 76] Result @ 4m: 6.27, 9.53
+
+[TRIAL 77] START ---
+[TRIAL 77] Phase 1: 4m Training...
+[TRIAL 77] Result @ 4m: 0.09, 1.40
+
+[TRIAL 78] START ---
+[TRIAL 78] Phase 1: 4m Training...
+[ERROR] Trial 78: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 70.62 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 79] START ---
+[TRIAL 79] Phase 1: 4m Training...
+[ERROR] Trial 79: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 74.88 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 80] START ---
+[TRIAL 80] Phase 1: 4m Training...
+[ERROR] Trial 80: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 66.88 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 81] START ---
+
+[TRIAL 82] START ---
+[TRIAL 82] Phase 1: 4m Training...
+[ERROR] Trial 82: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 69.38 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 83] START ---
+[TRIAL 83] Phase 1: 4m Training...
+[ERROR] Trial 83: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 81.69 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 84] START ---
+[TRIAL 84] Phase 1: 4m Training...
+[ERROR] Trial 84: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 85] START ---
+[TRIAL 85] Phase 1: 4m Training...
+[ERROR] Trial 85: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 81.69 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 86] START ---
+[TRIAL 86] Phase 1: 4m Training...
+[ERROR] Trial 86: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 81.69 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 87] START ---
+
+[TRIAL 88] START ---
+
+[TRIAL 89] START ---
+
+[TRIAL 90] START ---
+[TRIAL 90] Phase 1: 4m Training...
+[TRIAL 90] Result @ 4m: 1.77, 5.09
+
+[TRIAL 91] START ---
+[TRIAL 91] Phase 1: 4m Training...
+[TRIAL 91] Result @ 4m: -0.42, 0.15
+
+[TRIAL 92] START ---
+
+[TRIAL 93] START ---
+
+[TRIAL 94] START ---
+[TRIAL 94] Phase 1: 4m Training...
+[ERROR] Trial 94: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 66.62 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 95] START ---
+[TRIAL 95] Phase 1: 4m Training...
+[ERROR] Trial 95: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 66.62 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 96] START ---
+
+[TRIAL 97] START ---
+
+[TRIAL 98] START ---
+
+[TRIAL 99] START ---
+[TRIAL 99] Phase 1: 4m Training...
+[ERROR] Trial 99: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 100] START ---
+
+[TRIAL 101] START ---
+[TRIAL 101] Phase 1: 4m Training...
+[ERROR] Trial 101: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.44 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 102] START ---
+[TRIAL 102] Phase 1: 4m Training...
+[ERROR] Trial 102: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 70.44 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 103] START ---
+[TRIAL 103] Phase 1: 4m Training...
+[ERROR] Trial 103: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 70.44 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 104] START ---
+[TRIAL 104] Phase 1: 4m Training...
+[ERROR] Trial 104: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.44 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 105] START ---
+[TRIAL 105] Phase 1: 4m Training...
+[TRIAL 105] Result @ 4m: 1.34, 3.54
+
+[TRIAL 106] START ---
+[TRIAL 106] Phase 1: 4m Training...
+[TRIAL 106] Result @ 4m: -0.21, 0.51
+
+[TRIAL 107] START ---
+[TRIAL 107] Phase 1: 4m Training...
+[ERROR] Trial 107: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 108] START ---
+[TRIAL 108] Phase 1: 4m Training...
+[ERROR] Trial 108: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 70.12 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 109] START ---
+[TRIAL 109] Phase 1: 4m Training...
+[ERROR] Trial 109: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 110] START ---
+[TRIAL 110] Phase 1: 4m Training...
+[ERROR] Trial 110: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[TRIAL 111] START ---
+[TRIAL 111] Phase 1: 4m Training...
+[ERROR] Trial 111: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.94 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 112] START ---
+[TRIAL 112] Phase 1: 4m Training...
+[ERROR] Trial 112: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 68.94 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 113] START ---
+[TRIAL 113] Phase 1: 4m Training...
+[ERROR] Trial 113: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 78.94 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 114] START ---
+[TRIAL 114] Phase 1: 4m Training...
+[ERROR] Trial 114: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 68.94 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 115] START ---
+
+[TRIAL 116] START ---
+
+[TRIAL 117] START ---
+
+[TRIAL 118] START ---
+[TRIAL 118] Phase 1: 4m Training...
+[TRIAL 118] Result @ 4m: 3.15, 6.91
+
+[TRIAL 119] START ---
+[TRIAL 119] Phase 1: 4m Training...
+[TRIAL 119] Result @ 4m: 6.23, 9.24
+
+[TRIAL 120] START ---
+[TRIAL 120] Phase 1: 4m Training...
+[ERROR] Trial 120: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 77.88 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 121] START ---
+
+[TRIAL 122] START ---
+
+[TRIAL 123] START ---
+[TRIAL 123] Phase 1: 4m Training...
+[TRIAL 123] Result @ 4m: -0.13, 0.35
+
+[TRIAL 124] START ---
+[TRIAL 124] Phase 1: 4m Training...
+[TRIAL 124] Result @ 4m: 11.36, 11.69
+
+[TRIAL 125] START ---
+[TRIAL 125] Phase 1: 4m Training...
+[TRIAL 125] Result @ 4m: 4.15, 7.38
+
+[TRIAL 126] START ---
+[TRIAL 126] Phase 1: 4m Training...
+[ERROR] Trial 126: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 65.75 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 127] START ---
+[TRIAL 127] Phase 1: 4m Training...
+[TRIAL 127] Result @ 4m: 21.43, 7.77
+[TRIAL 127] Phase 2: +2m Check...
+[TRIAL 127] Result @ 6m: 26.62, 8.71
+
+[TRIAL 128] START ---
+
+[TRIAL 129] START ---
+
+[TRIAL 130] START ---
+[TRIAL 130] Phase 1: 4m Training...
+[TRIAL 130] Result @ 4m: 13.67, 9.30
+
+[TRIAL 131] START ---
+[TRIAL 131] Phase 1: 4m Training...
+[ERROR] Trial 131: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 65.38 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 20.08 MiB is allocated by PyTorch, and 13.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 132] START ---
+
+[TRIAL 133] START ---
+
+[TRIAL 134] START ---
+[TRIAL 134] Phase 1: 4m Training...
+[TRIAL 134] Result @ 4m: 13.58, 8.80
+
+[TRIAL 135] START ---
+
+[TRIAL 136] START ---
+[TRIAL 136] Phase 1: 4m Training...
+[TRIAL 136] Result @ 4m: 10.90, 7.28
+
+[TRIAL 137] START ---
+[TRIAL 137] Phase 1: 4m Training...
+[TRIAL 137] Result @ 4m: 9.98, 9.60
+
+[TRIAL 138] START ---
+
+[TRIAL 139] START ---
+
+[TRIAL 140] START ---
+
+[TRIAL 141] START ---
+
+[TRIAL 142] START ---
+
+[TRIAL 143] START ---
+
+[TRIAL 144] START ---
+[TRIAL 144] Phase 1: 4m Training...
+[ERROR] Trial 144: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 75.31 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 145] START ---
+[TRIAL 145] Phase 1: 4m Training...
+[ERROR] Trial 145: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 67.31 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 146] START ---
+
+[TRIAL 147] START ---
+
+[TRIAL 148] START ---
+[TRIAL 148] Phase 1: 4m Training...
+[ERROR] Trial 148: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 75.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 149] START ---
+[TRIAL 149] Phase 1: 4m Training...
+[ERROR] Trial 149: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 75.81 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 150] START ---
+
+[TRIAL 151] START ---
+[TRIAL 151] Phase 1: 4m Training...
+[TRIAL 151] Result @ 4m: 8.44, 8.06
+
+[TRIAL 152] START ---
+[TRIAL 152] Phase 1: 4m Training...
+[TRIAL 152] Result @ 4m: 17.61, 11.26
+[TRIAL 152] Phase 2: +2m Check...
+[TRIAL 152] Result @ 6m: 25.16, 11.47
+
+[TRIAL 153] START ---
+
+[TRIAL 154] START ---
+
+[TRIAL 155] START ---
+[TRIAL 155] Phase 1: 4m Training...
+[ERROR] Trial 155: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 67.62 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 156] START ---
+[TRIAL 156] Phase 1: 4m Training...
+[ERROR] Trial 156: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 15.46 GiB of which 67.62 MiB is free. Process 1360228 has 8.79 MiB memory in use. Including non-PyTorch memory, this process has 14.93 GiB memory in use. Of the allocated memory 24.84 MiB is allocated by PyTorch, and 11.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[TRIAL 157] START ---
+
+[TRIAL 158] START ---
+
+[TRIAL 159] START ---
+[TRIAL 159] Phase 1: 4m Training...
+[TRIAL 159] Result @ 4m: 10.49, 10.53
+
+[TRIAL 160] START ---
+[TRIAL 160] Phase 1: 4m Training...
+[TRIAL 160] Result @ 4m: 12.90, 10.75
+
+[TRIAL 161] START ---
+[TRIAL 161] Phase 1: 4m Training...
+[TRIAL 161] Result @ 4m: 10.97, 11.46
+
+[TRIAL 162] START ---
+
+[TRIAL 163] START ---
+[TRIAL 163] Phase 1: 4m Training...
+[TRIAL 163] Result @ 4m: 3.23, 6.59
+
+[TRIAL 164] START ---
+[TRIAL 164] Phase 1: 4m Training...
+[TRIAL 164] Result @ 4m: 19.19, 11.81
+[TRIAL 164] Phase 2: +2m Check...
+[TRIAL 164] Result @ 6m: 32.98, 4.79
+[TRIAL 164] Phase 3: Final +2m Check...
+[TRIAL 164] Result @ 8m: 33.04
+!!! SAVED TRIAL 164 !!!
+[ERROR] Trial 164: name 'mean_8' is not defined
+
+[TRIAL 165] START ---
+
+[TRIAL 166] START ---
+[TRIAL 166] Phase 1: 4m Training...
+[TRIAL 166] Result @ 4m: 11.10, 11.30
+
+[TRIAL 167] START ---
+[TRIAL 167] Phase 1: 4m Training...
+[TRIAL 167] Result @ 4m: 18.77, 12.85
+[TRIAL 167] Phase 2: +2m Check...
+[TRIAL 167] Result @ 6m: 29.99, 8.42
+
+[TRIAL 168] START ---
+
+[TRIAL 169] START ---
+
+[TRIAL 170] START ---
+[TRIAL 170] Phase 1: 4m Training...
+[TRIAL 170] Result @ 4m: 4.46, 6.99
+
+[TRIAL 171] START ---
+[TRIAL 171] Phase 1: 4m Training...
+[TRIAL 171] Result @ 4m: 19.06, 10.98
+[TRIAL 171] Phase 2: +2m Check...
+[TRIAL 171] Result @ 6m: 30.08, 5.78
+[TRIAL 171] Phase 3: Final +2m Check...
+[TRIAL 171] Result @ 8m: 30.96
+!!! SAVED TRIAL 171 !!!
+[ERROR] Trial 171: name 'mean_8' is not defined
+
+[TRIAL 172] START ---
+[TRIAL 172] Phase 1: 4m Training...
+[TRIAL 172] Result @ 4m: 28.23, 7.19
+[TRIAL 172] Phase 2: +2m Check...
+[TRIAL 172] Result @ 6m: 28.92, 10.09
+
+[TRIAL 173] START ---
+[TRIAL 173] Phase 1: 4m Training...
+[TRIAL 173] Result @ 4m: 28.26, 6.56
+[TRIAL 173] Phase 2: +2m Check...
+[TRIAL 173] Result @ 6m: 33.27, 6.28
+[TRIAL 173] Phase 3: Final +2m Check...
+[TRIAL 173] Result @ 8m: 36.10
+!!! SAVED TRIAL 173 !!!
+[ERROR] Trial 173: name 'mean_8' is not defined
+
+[TRIAL 174] START ---
+[TRIAL 174] Phase 1: 4m Training...
+[TRIAL 174] Result @ 4m: 19.64, 11.27
+[TRIAL 174] Phase 2: +2m Check...
+[TRIAL 174] Result @ 6m: 31.76, 3.56
+[TRIAL 174] Phase 3: Final +2m Check...
+[TRIAL 174] Result @ 8m: 33.26
+!!! SAVED TRIAL 174 !!!
+[ERROR] Trial 174: name 'mean_8' is not defined
+
+[TRIAL 175] START ---
+[TRIAL 175] Phase 1: 4m Training...
+[TRIAL 175] Result @ 4m: 22.80, 8.96
+[TRIAL 175] Phase 2: +2m Check...
+[TRIAL 175] Result @ 6m: 32.42, 4.50
+[TRIAL 175] Phase 3: Final +2m Check...
+[TRIAL 175] Result @ 8m: 33.41
+!!! SAVED TRIAL 175 !!!
+[ERROR] Trial 175: name 'mean_8' is not defined
+
+[TRIAL 176] START ---
+[TRIAL 176] Phase 1: 4m Training...
+[TRIAL 176] Result @ 4m: 25.15, 8.04
+[TRIAL 176] Phase 2: +2m Check...
+[TRIAL 176] Result @ 6m: 31.36, 4.76
+[TRIAL 176] Phase 3: Final +2m Check...
+[TRIAL 176] Result @ 8m: 35.95
+!!! SAVED TRIAL 176 !!!
+[ERROR] Trial 176: name 'mean_8' is not defined
+
+[TRIAL 177] START ---
+[TRIAL 177] Phase 1: 4m Training...
+[TRIAL 177] Result @ 4m: 22.81, 10.48
+[TRIAL 177] Phase 2: +2m Check...
+[TRIAL 177] Result @ 6m: 27.95, 8.02
+
+[TRIAL 178] START ---
+[TRIAL 178] Phase 1: 4m Training...
+[TRIAL 178] Result @ 4m: 9.03, 8.56
+
+[TRIAL 179] START ---
+[TRIAL 179] Phase 1: 4m Training...
+[TRIAL 179] Result @ 4m: 3.94, 7.08
+
+[TRIAL 180] START ---
+[TRIAL 180] Phase 1: 4m Training...
+[TRIAL 180] Result @ 4m: 10.90, 10.64
+
+[TRIAL 181] START ---
+[TRIAL 181] Phase 1: 4m Training...
+[TRIAL 181] Result @ 4m: 24.76, 8.72
+[TRIAL 181] Phase 2: +2m Check...
+[TRIAL 181] Result @ 6m: 33.20, 4.69
+[TRIAL 181] Phase 3: Final +2m Check...
+[TRIAL 181] Result @ 8m: 31.60
+!!! SAVED TRIAL 181 !!!
+[ERROR] Trial 181: name 'mean_8' is not defined
+
+[TRIAL 182] START ---
+[TRIAL 182] Phase 1: 4m Training...
+[TRIAL 182] Result @ 4m: 26.73, 8.02
+[TRIAL 182] Phase 2: +2m Check...
+[TRIAL 182] Result @ 6m: 33.95, 5.01
+[TRIAL 182] Phase 3: Final +2m Check...
+[TRIAL 182] Result @ 8m: 34.13
+!!! SAVED TRIAL 182 !!!
+[ERROR] Trial 182: name 'mean_8' is not defined
+
+[TRIAL 183] START ---
+[TRIAL 183] Phase 1: 4m Training...
+[TRIAL 183] Result @ 4m: 30.31, 6.98
+[TRIAL 183] Phase 2: +2m Check...
+[TRIAL 183] Result @ 6m: 35.51, 3.25
+[TRIAL 183] Phase 3: Final +2m Check...
+[TRIAL 183] Result @ 8m: 35.98
+!!! SAVED TRIAL 183 !!!
+[ERROR] Trial 183: name 'mean_8' is not defined
+
+[TRIAL 184] START ---
+[TRIAL 184] Phase 1: 4m Training...
+[TRIAL 184] Result @ 4m: 9.97, 9.45
+
+[TRIAL 185] START ---
+[TRIAL 185] Phase 1: 4m Training...
+[TRIAL 185] Result @ 4m: 27.57, 10.14
+[TRIAL 185] Phase 2: +2m Check...
+[TRIAL 185] Result @ 6m: 33.45, 3.70
+[TRIAL 185] Phase 3: Final +2m Check...
+[TRIAL 185] Result @ 8m: 33.36
+!!! SAVED TRIAL 185 !!!
+[ERROR] Trial 185: name 'mean_8' is not defined
+
+[TRIAL 186] START ---
+[TRIAL 186] Phase 1: 4m Training...
+[TRIAL 186] Result @ 4m: 27.62, 10.93
+[TRIAL 186] Phase 2: +2m Check...
+[TRIAL 186] Result @ 6m: 34.45, 4.92
+[TRIAL 186] Phase 3: Final +2m Check...
+[TRIAL 186] Result @ 8m: 35.31
+!!! SAVED TRIAL 186 !!!
+[ERROR] Trial 186: name 'mean_8' is not defined
+
+[TRIAL 187] START ---
+[TRIAL 187] Phase 1: 4m Training...
+[TRIAL 187] Result @ 4m: 28.65, 8.91
+[TRIAL 187] Phase 2: +2m Check...
+[TRIAL 187] Result @ 6m: 31.16, 7.40
+[TRIAL 187] Phase 3: Final +2m Check...
+[TRIAL 187] Result @ 8m: 34.84
+!!! SAVED TRIAL 187 !!!
+[ERROR] Trial 187: name 'mean_8' is not defined
+
+[TRIAL 188] START ---
+[TRIAL 188] Phase 1: 4m Training...
+[TRIAL 188] Result @ 4m: 19.63, 12.64
+[TRIAL 188] Phase 2: +2m Check...
+[TRIAL 188] Result @ 6m: 32.69, 5.55
+[TRIAL 188] Phase 3: Final +2m Check...
+[TRIAL 188] Result @ 8m: 32.03
+!!! SAVED TRIAL 188 !!!
+[ERROR] Trial 188: name 'mean_8' is not defined
+
+[TRIAL 189] START ---
+[TRIAL 189] Phase 1: 4m Training...
+[TRIAL 189] Result @ 4m: 31.68, 7.04
+[TRIAL 189] Phase 2: +2m Check...
+[TRIAL 189] Result @ 6m: 30.16, 11.00
+[TRIAL 189] Phase 3: Final +2m Check...
+[TRIAL 189] Result @ 8m: 34.48
+!!! SAVED TRIAL 189 !!!
+[ERROR] Trial 189: name 'mean_8' is not defined
+
+[TRIAL 190] START ---
+[TRIAL 190] Phase 1: 4m Training...
+[TRIAL 190] Result @ 4m: 11.50, 10.65
+
+[TRIAL 191] START ---
+[TRIAL 191] Phase 1: 4m Training...
+[TRIAL 191] Result @ 4m: 11.31, 9.17
+
+[TRIAL 192] START ---
+[TRIAL 192] Phase 1: 4m Training...
+[TRIAL 192] Result @ 4m: 20.97, 11.56
+[TRIAL 192] Phase 2: +2m Check...
+[TRIAL 192] Result @ 6m: 32.40, 4.59
+[TRIAL 192] Phase 3: Final +2m Check...
+[TRIAL 192] Result @ 8m: 35.68
+!!! SAVED TRIAL 192 !!!
+[ERROR] Trial 192: name 'mean_8' is not defined
+
+[TRIAL 193] START ---
+[TRIAL 193] Phase 1: 4m Training...
+[TRIAL 193] Result @ 4m: 14.16, 11.08
+
+[TRIAL 194] START ---
+[TRIAL 194] Phase 1: 4m Training...
+[TRIAL 194] Result @ 4m: 8.55, 9.78
+
+[TRIAL 195] START ---
+[TRIAL 195] Phase 1: 4m Training...
+[TRIAL 195] Result @ 4m: 18.26, 10.99
+[TRIAL 195] Phase 2: +2m Check...
+[TRIAL 195] Result @ 6m: 30.54, 3.97
+[TRIAL 195] Phase 3: Final +2m Check...
+[TRIAL 195] Result @ 8m: 32.55
+!!! SAVED TRIAL 195 !!!
+[ERROR] Trial 195: name 'mean_8' is not defined
+
+[TRIAL 196] START ---
+[TRIAL 196] Phase 1: 4m Training...
+[TRIAL 196] Result @ 4m: 20.80, 12.96
+[TRIAL 196] Phase 2: +2m Check...

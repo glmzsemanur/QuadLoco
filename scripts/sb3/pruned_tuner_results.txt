@@ -1,0 +1,404 @@
+
+[TRIAL 0] STARTING ---
+Check @ 240s: Reward -0.38 +/- 0.19
+Check @ 360s: Reward -0.23 +/- 0.17
+Check @ 480s: Reward -0.15 +/- 0.22
+[TRIAL 0] SUCCESS: -0.17, 0.21
+
+[TRIAL 1] STARTING ---
+Check @ 240s: Reward -3.20 +/- 1.14
+!!! PRUNED !!! Trial 1 stopped at 240s
+
+[TRIAL 2] STARTING ---
+Check @ 240s: Reward -0.44 +/- 0.09
+!!! PRUNED !!! Trial 2 stopped at 240s
+
+[TRIAL 3] STARTING ---
+Check @ 240s: Reward -0.09 +/- 0.22
+Check @ 360s: Reward 0.21 +/- 0.37
+Check @ 480s: Reward 1.48 +/- 4.39
+[TRIAL 3] SUCCESS: 1.51, 4.43
+
+[TRIAL 4] STARTING ---
+Check @ 240s: Reward -0.30 +/- 0.14
+!!! PRUNED !!! Trial 4 stopped at 240 with -0.30 +/- 0.14
+
+[TRIAL 5] STARTING ---
+Check @ 240s: Reward 2.43 +/- 6.52
+Check @ 360s: Reward 2.64 +/- 6.42
+Check @ 480s: Reward 2.77 +/- 6.80
+[TRIAL 5] SUCCESS: 2.53, 6.60
+
+[TRIAL 6] STARTING ---
+Check @ 240s: Reward -0.06 +/- 0.47
+Check @ 360s: Reward 1.14 +/- 4.66
+Check @ 480s: Reward 1.49 +/- 4.92
+[TRIAL 6] SUCCESS: 1.39, 4.63
+
+[TRIAL 7] STARTING ---
+Check @ 240s: Reward -0.66 +/- 0.08
+!!! PRUNED !!! Trial 7 stopped at 240 with -0.66 +/- 0.08
+
+[TRIAL 8] STARTING ---
+Check @ 240s: Reward -0.58 +/- 0.08
+!!! PRUNED !!! Trial 8 stopped at 240 with -0.58 +/- 0.08
+
+[TRIAL 9] STARTING ---
+Check @ 240s: Reward -0.71 +/- 0.09
+!!! PRUNED !!! Trial 9 stopped at 240 with -0.71 +/- 0.09
+
+[TRIAL 10] STARTING ---
+Check @ 240s: Reward -0.58 +/- 0.10
+!!! PRUNED !!! Trial 10 stopped at 240 with -0.58 +/- 0.10
+
+[TRIAL 11] STARTING ---
+Check @ 240s: Reward -0.75 +/- 0.11
+!!! PRUNED !!! Trial 11 stopped at 240 with -0.75 +/- 0.11
+
+[TRIAL 12] STARTING ---
+Check @ 240s: Reward -0.46 +/- 0.12
+!!! PRUNED !!! Trial 12 stopped at 240 with -0.46 +/- 0.12
+
+[TRIAL 13] STARTING ---
+Check @ 240s: Reward 0.03 +/- 0.38
+Check @ 360s: Reward 3.68 +/- 7.04
+Check @ 480s: Reward 7.75 +/- 10.04
+[TRIAL 13] SUCCESS: 8.12, 10.35
+
+[TRIAL 14] STARTING ---
+Check @ 240s: Reward -0.17 +/- 0.24
+!!! PRUNED !!! Trial 14 stopped at 240 with -0.17 +/- 0.24
+
+[TRIAL 15] STARTING ---
+Check @ 240s: Reward -0.52 +/- 0.12
+!!! PRUNED !!! Trial 15 stopped at 240 with -0.52 +/- 0.12
+
+[TRIAL 16] STARTING ---
+Check @ 240s: Reward 1.51 +/- 4.63
+Check @ 360s: Reward 2.49 +/- 5.46
+Check @ 480s: Reward 3.46 +/- 6.77
+[TRIAL 16] SUCCESS: 3.15, 6.33
+
+[TRIAL 17] STARTING ---
+Check @ 240s: Reward 1.61 +/- 4.79
+Check @ 360s: Reward 4.04 +/- 7.99
+Check @ 480s: Reward 9.42 +/- 11.73
+[TRIAL 17] SUCCESS: 9.66, 12.02
+
+[TRIAL 18] STARTING ---
+Check @ 240s: Reward -0.38 +/- 0.09
+!!! PRUNED !!! Trial 18 stopped at 240 with -0.38 +/- 0.09
+
+[TRIAL 19] STARTING ---
+Check @ 240s: Reward -3.56 +/- 0.85
+!!! PRUNED !!! Trial 19 stopped at 240 with -3.56 +/- 0.85
+
+[TRIAL 20] STARTING ---
+Check @ 240s: Reward 0.39 +/- 0.91
+Check @ 360s: Reward 3.27 +/- 6.91
+Check @ 480s: Reward 4.02 +/- 7.29
+[TRIAL 20] SUCCESS: 3.80, 7.12
+
+[TRIAL 21] STARTING ---
+Check @ 240s: Reward 3.26 +/- 6.26
+Check @ 360s: Reward 2.61 +/- 5.60
+Check @ 480s: Reward 5.09 +/- 7.35
+[TRIAL 21] SUCCESS: 4.83, 7.43
+
+[TRIAL 22] STARTING ---
+Check @ 240s: Reward 0.14 +/- 0.24
+!!! PRUNED !!! Trial 22 stopped at 240 with 0.14 +/- 0.24
+
+[TRIAL 23] STARTING ---
+Check @ 240s: Reward 1.86 +/- 4.89
+Check @ 360s: Reward 2.98 +/- 6.14
+Check @ 480s: Reward 4.04 +/- 7.06
+[TRIAL 23] SUCCESS: 4.15, 7.27
+
+[TRIAL 24] STARTING ---
+Check @ 240s: Reward 4.70 +/- 6.36
+Check @ 360s: Reward 1.91 +/- 5.91
+Check @ 480s: Reward 2.86 +/- 6.08
+[TRIAL 24] SUCCESS: 3.02, 5.96
+
+[TRIAL 25] STARTING ---
+Check @ 240s: Reward 10.34 +/- 8.91
+Check @ 360s: Reward 11.85 +/- 8.41
+Check @ 480s: Reward 14.25 +/- 8.88
+[TRIAL 25] SUCCESS: 14.13, 8.80
+
+[TRIAL 26] STARTING ---
+Check @ 240s: Reward 8.99 +/- 9.60
+Check @ 360s: Reward 12.92 +/- 9.46
+Check @ 480s: Reward 14.23 +/- 10.71
+[TRIAL 26] SUCCESS: 14.43, 10.91
+
+[TRIAL 27] STARTING ---
+Check @ 240s: Reward 6.96 +/- 8.31
+Check @ 360s: Reward 8.98 +/- 8.38
+Check @ 480s: Reward 8.32 +/- 8.81
+[TRIAL 27] SUCCESS: 8.20, 8.58
+
+[TRIAL 28] STARTING ---
+Check @ 240s: Reward 4.31 +/- 7.25
+Check @ 360s: Reward 5.57 +/- 8.32
+Check @ 480s: Reward 6.85 +/- 8.53
+[TRIAL 28] SUCCESS: 6.90, 8.66
+
+[TRIAL 29] STARTING ---
+Check @ 240s: Reward -1.04 +/- 2.96
+!!! PRUNED !!! Trial 29 stopped at 240 with -1.04 +/- 2.96
+
+[TRIAL 30] STARTING ---
+Check @ 240s: Reward 6.16 +/- 6.99
+Check @ 360s: Reward 7.31 +/- 7.93
+Check @ 480s: Reward 6.09 +/- 7.92
+[TRIAL 30] SUCCESS: 5.94, 7.85
+
+[TRIAL 31] STARTING ---
+Check @ 240s: Reward 0.40 +/- 1.07
+!!! PRUNED !!! Trial 31 stopped at 240 with 0.40 +/- 1.07
+
+[TRIAL 32] STARTING ---
+Check @ 240s: Reward 12.22 +/- 10.20
+Check @ 360s: Reward 18.84 +/- 9.39
+Check @ 480s: Reward 23.11 +/- 7.79
+[TRIAL 32] SUCCESS: 22.97, 7.76
+
+[TRIAL 33] STARTING ---
+Check @ 240s: Reward -0.32 +/- 0.27
+!!! PRUNED !!! Trial 33 stopped at 240 with -0.32 +/- 0.27
+
+[TRIAL 34] STARTING ---
+Check @ 240s: Reward 4.94 +/- 7.65
+Check @ 360s: Reward 6.23 +/- 8.11
+Check @ 480s: Reward 9.15 +/- 8.94
+[TRIAL 34] SUCCESS: 9.06, 8.81
+
+[TRIAL 35] STARTING ---
+Check @ 240s: Reward -0.71 +/- 0.08
+!!! PRUNED !!! Trial 35 stopped at 240 with -0.71 +/- 0.08
+
+[TRIAL 36] STARTING ---
+Check @ 240s: Reward -0.63 +/- 0.07
+!!! PRUNED !!! Trial 36 stopped at 240 with -0.63 +/- 0.07
+
+[TRIAL 37] STARTING ---
+Check @ 240s: Reward -1.04 +/- 2.34
+!!! PRUNED !!! Trial 37 stopped at 240 with -1.04 +/- 2.34
+
+[TRIAL 38] STARTING ---
+Check @ 240s: Reward -0.72 +/- 0.09
+!!! PRUNED !!! Trial 38 stopped at 240 with -0.72 +/- 0.09
+
+[TRIAL 39] STARTING ---
+Check @ 240s: Reward -1.82 +/- 3.64
+!!! PRUNED !!! Trial 39 stopped at 240 with -1.82 +/- 3.64
+
+[TRIAL 40] STARTING ---
+Check @ 240s: Reward -0.75 +/- 0.12
+!!! PRUNED !!! Trial 40 stopped at 240 with -0.75 +/- 0.12
+
+[TRIAL 41] STARTING ---
+Check @ 240s: Reward -0.62 +/- 0.07
+!!! PRUNED !!! Trial 41 stopped at 240 with -0.62 +/- 0.07
+
+[TRIAL 42] STARTING ---
+Check @ 240s: Reward 2.79 +/- 5.70
+!!! PRUNED !!! Trial 42 stopped at 240 with 2.79 +/- 5.70
+
+[TRIAL 43] STARTING ---
+Check @ 240s: Reward -1.37 +/- 3.30
+!!! PRUNED !!! Trial 43 stopped at 240 with -1.37 +/- 3.30
+
+[TRIAL 44] STARTING ---
+Check @ 240s: Reward -0.61 +/- 0.07
+!!! PRUNED !!! Trial 44 stopped at 240 with -0.61 +/- 0.07
+
+[TRIAL 45] STARTING ---
+Check @ 240s: Reward -0.68 +/- 0.09
+!!! PRUNED !!! Trial 45 stopped at 240 with -0.68 +/- 0.09
+
+[TRIAL 46] STARTING ---
+Check @ 240s: Reward -0.67 +/- 0.08
+!!! PRUNED !!! Trial 46 stopped at 240 with -0.67 +/- 0.08
+
+[TRIAL 47] STARTING ---
+Check @ 240s: Reward -0.62 +/- 0.07
+!!! PRUNED !!! Trial 47 stopped at 240 with -0.62 +/- 0.07
+
+[TRIAL 48] STARTING ---
+Check @ 240s: Reward -1.01 +/- 0.53
+!!! PRUNED !!! Trial 48 stopped at 240 with -1.01 +/- 0.53
+
+[TRIAL 49] STARTING ---
+Check @ 240s: Reward -0.66 +/- 0.08
+!!! PRUNED !!! Trial 49 stopped at 240 with -0.66 +/- 0.08
+
+[TRIAL 50] STARTING ---
+Check @ 240s: Reward -1.36 +/- 1.41
+!!! PRUNED !!! Trial 50 stopped at 240 with -1.36 +/- 1.41
+
+[TRIAL 51] STARTING ---
+Check @ 240s: Reward -0.77 +/- 0.13
+!!! PRUNED !!! Trial 51 stopped at 240 with -0.77 +/- 0.13
+
+[TRIAL 52] STARTING ---
+Check @ 240s: Reward -0.61 +/- 0.07
+!!! PRUNED !!! Trial 52 stopped at 240 with -0.61 +/- 0.07
+
+[TRIAL 53] STARTING ---
+Check @ 240s: Reward -0.79 +/- 0.13
+!!! PRUNED !!! Trial 53 stopped at 240 with -0.79 +/- 0.13
+
+[TRIAL 54] STARTING ---
+Check @ 240s: Reward -0.76 +/- 0.11
+!!! PRUNED !!! Trial 54 stopped at 240 with -0.76 +/- 0.11
+
+[TRIAL 55] STARTING ---
+Check @ 240s: Reward -0.61 +/- 0.07
+!!! PRUNED !!! Trial 55 stopped at 240 with -0.61 +/- 0.07
+
+[TRIAL 56] STARTING ---
+Check @ 240s: Reward -0.76 +/- 0.11
+!!! PRUNED !!! Trial 56 stopped at 240 with -0.76 +/- 0.11
+
+[TRIAL 57] STARTING ---
+Check @ 240s: Reward -0.62 +/- 0.07
+!!! PRUNED !!! Trial 57 stopped at 240 with -0.62 +/- 0.07
+
+[TRIAL 58] STARTING ---
+Check @ 240s: Reward -0.69 +/- 0.08
+!!! PRUNED !!! Trial 58 stopped at 240 with -0.69 +/- 0.08
+
+[TRIAL 59] STARTING ---
+Check @ 240s: Reward -0.69 +/- 0.08
+!!! PRUNED !!! Trial 59 stopped at 240 with -0.69 +/- 0.08
+
+[TRIAL 60] STARTING ---
+Check @ 240s: Reward 3.53 +/- 5.77
+Check @ 360s: Reward 4.11 +/- 6.09
+Check @ 480s: Reward -6.79 +/- 6.73
+!!! PRUNED !!! Trial 60 stopped at 480 with -6.79 +/- 6.73
+
+[TRIAL 61] STARTING ---
+Check @ 240s: Reward -0.68 +/- 0.09
+!!! PRUNED !!! Trial 61 stopped at 240 with -0.68 +/- 0.09
+
+[TRIAL 62] STARTING ---
+Check @ 240s: Reward -0.64 +/- 0.09
+!!! PRUNED !!! Trial 62 stopped at 240 with -0.64 +/- 0.09
+
+[TRIAL 63] STARTING ---
+Check @ 240s: Reward -0.67 +/- 0.08
+!!! PRUNED !!! Trial 63 stopped at 240 with -0.67 +/- 0.08
+
+[TRIAL 64] STARTING ---
+Check @ 240s: Reward -0.65 +/- 0.09
+!!! PRUNED !!! Trial 64 stopped at 240 with -0.65 +/- 0.09
+
+[TRIAL 65] STARTING ---
+Check @ 240s: Reward -0.61 +/- 0.10
+!!! PRUNED !!! Trial 65 stopped at 240 with -0.61 +/- 0.10
+
+[TRIAL 66] STARTING ---
+Check @ 240s: Reward -0.69 +/- 0.08
+!!! PRUNED !!! Trial 66 stopped at 240 with -0.69 +/- 0.08
+
+[TRIAL 67] STARTING ---
+Check @ 240s: Reward -0.65 +/- 0.09
+!!! PRUNED !!! Trial 67 stopped at 240 with -0.65 +/- 0.09
+
+[TRIAL 68] STARTING ---
+Check @ 240s: Reward -0.80 +/- 0.55
+!!! PRUNED !!! Trial 68 stopped at 240 with -0.80 +/- 0.55
+
+[TRIAL 69] STARTING ---
+Check @ 240s: Reward -0.77 +/- 0.11
+!!! PRUNED !!! Trial 69 stopped at 240 with -0.77 +/- 0.11
+
+[TRIAL 70] STARTING ---
+Check @ 240s: Reward -0.52 +/- 0.10
+!!! PRUNED !!! Trial 70 stopped at 240 with -0.52 +/- 0.10
+
+[TRIAL 71] STARTING ---
+Check @ 240s: Reward -0.77 +/- 0.09
+!!! PRUNED !!! Trial 71 stopped at 240 with -0.77 +/- 0.09
+
+[TRIAL 72] STARTING ---
+Check @ 240s: Reward -0.74 +/- 0.09
+!!! PRUNED !!! Trial 72 stopped at 240 with -0.74 +/- 0.09
+
+[TRIAL 73] STARTING ---
+Check @ 240s: Reward -0.80 +/- 0.09
+!!! PRUNED !!! Trial 73 stopped at 240 with -0.80 +/- 0.09
+
+[TRIAL 74] STARTING ---
+Check @ 240s: Reward -3.27 +/- 5.53
+!!! PRUNED !!! Trial 74 stopped at 240 with -3.27 +/- 5.53
+
+[TRIAL 75] STARTING ---
+Check @ 240s: Reward -0.65 +/- 0.08
+!!! PRUNED !!! Trial 75 stopped at 240 with -0.65 +/- 0.08
+
+[TRIAL 76] STARTING ---
+Check @ 240s: Reward -0.76 +/- 0.09
+!!! PRUNED !!! Trial 76 stopped at 240 with -0.76 +/- 0.09
+
+[TRIAL 77] STARTING ---
+Check @ 240s: Reward -0.72 +/- 0.10
+!!! PRUNED !!! Trial 77 stopped at 240 with -0.72 +/- 0.10
+
+[TRIAL 78] STARTING ---
+Check @ 240s: Reward -0.62 +/- 0.07
+!!! PRUNED !!! Trial 78 stopped at 240 with -0.62 +/- 0.07
+
+[TRIAL 79] STARTING ---
+Check @ 240s: Reward -0.83 +/- 0.16
+!!! PRUNED !!! Trial 79 stopped at 240 with -0.83 +/- 0.16
+
+[TRIAL 80] STARTING ---
+Check @ 240s: Reward -0.62 +/- 0.07
+!!! PRUNED !!! Trial 80 stopped at 240 with -0.62 +/- 0.07
+
+[TRIAL 81] STARTING ---
+Check @ 240s: Reward -0.75 +/- 0.10
+!!! PRUNED !!! Trial 81 stopped at 240 with -0.75 +/- 0.10
+
+[TRIAL 82] STARTING ---
+Check @ 240s: Reward -1.56 +/- 1.12
+!!! PRUNED !!! Trial 82 stopped at 240 with -1.56 +/- 1.12
+
+[TRIAL 83] STARTING ---
+Check @ 240s: Reward -0.74 +/- 0.09
+!!! PRUNED !!! Trial 83 stopped at 240 with -0.74 +/- 0.09
+
+[TRIAL 84] STARTING ---
+Check @ 240s: Reward 0.95 +/- 4.29
+!!! PRUNED !!! Trial 84 stopped at 240 with 0.95 +/- 4.29
+
+[TRIAL 85] STARTING ---
+Check @ 240s: Reward -0.68 +/- 0.09
+!!! PRUNED !!! Trial 85 stopped at 240 with -0.68 +/- 0.09
+
+[TRIAL 86] STARTING ---
+Check @ 240s: Reward -0.66 +/- 0.09
+!!! PRUNED !!! Trial 86 stopped at 240 with -0.66 +/- 0.09
+
+[TRIAL 87] STARTING ---
+Check @ 240s: Reward -0.78 +/- 0.12
+!!! PRUNED !!! Trial 87 stopped at 240 with -0.78 +/- 0.12
+
+[TRIAL 88] STARTING ---
+Check @ 240s: Reward -0.80 +/- 0.12
+!!! PRUNED !!! Trial 88 stopped at 240 with -0.80 +/- 0.12
+
+[TRIAL 89] STARTING ---
+Check @ 240s: Reward -1.11 +/- 0.83
+!!! PRUNED !!! Trial 89 stopped at 240 with -1.11 +/- 0.83
+
+[TRIAL 90] STARTING ---
+Check @ 240s: Reward -0.65 +/- 0.08
+!!! PRUNED !!! Trial 90 stopped at 240 with -0.65 +/- 0.08
+
+[TRIAL 91] STARTING ---
