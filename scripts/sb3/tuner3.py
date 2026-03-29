@@ -56,13 +56,16 @@ class TrialEvalCallback(BaseCallback):
         self.eval_env = eval_env
         self.log_file = log_file
         self.start_time = time.time()
-        self.checkpoints = [240, 360, 480] 
+        self.checkpoints = [200, 300, 480] 
         self.current_checkpoint_idx = 0
         self.is_pruned = False
         self.last_mean_reward = 0.0
         self.last_std_reward = 0.0
     def _on_step(self) -> bool:
         elapsed = time.time() - self.start_time
+        if elapsed >= 500: # Hard stop at 500 seconds (8m20s) to prevent runaway trials
+            self.log_file.write(f"--- REACHED MAX TIME (9m) --- Ending Trial {self.trial.number} successfully.\n")
+            return False # This stops the model.learn loop
         if self.current_checkpoint_idx < len(self.checkpoints):
             if elapsed >= self.checkpoints[self.current_checkpoint_idx]:
                 # Evaluate
@@ -76,6 +79,7 @@ class TrialEvalCallback(BaseCallback):
                 if self.trial.should_prune():
                     self.log_file.write(f"!!! PRUNED !!! Failed Gate {self.current_checkpoint_idx}\n")
                     self.is_pruned = True
+                    self.trial.study.tell(self.trial, mean_reward)
                     return False 
                 
                 self.current_checkpoint_idx += 1
@@ -106,7 +110,7 @@ def main(env_cfg, agent_cfg):
     storage_url = f"sqlite:///{study_name}.db"
 
     # Step 0 = 4 mins, Step 1 = 6 mins, Step 2 = 8 mins
-    my_gates = {0: 20.0, 1: 28.0, 2: 31.0}
+    my_gates = {0: 20.0, 1: 30.0, 2: 32.0}
     study = optuna.create_study(
         study_name=study_name, 
         storage=storage_url, 

@@ -1,6 +1,303 @@
 
 [TRIAL 0] STARTING ---
-[GATE 0] Reward: 1.27 +/- 5.50 at 240s
+[GATE 0] Reward: -1.12 +/- 0.33 at 240s
 !!! PRUNED !!! Failed Gate 0
 
 [TRIAL 1] STARTING ---
+[GATE 0] Reward: 4.55 +/- 6.40 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 2] STARTING ---
+[GATE 0] Reward: 3.04 +/- 6.62 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 3] STARTING ---
+[GATE 0] Reward: -11.46 +/- 6.24 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 4] STARTING ---
+[GATE 0] Reward: 0.12 +/- 0.47 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 5] STARTING ---
+[GATE 0] Reward: 4.65 +/- 7.30 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 6] STARTING ---
+[GATE 0] Reward: 0.05 +/- 0.39 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 7] STARTING ---
+[GATE 0] Reward: -0.51 +/- 0.10 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 8] STARTING ---
+[GATE 0] Reward: -0.56 +/- 0.09 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 9] STARTING ---
+[GATE 0] Reward: -0.27 +/- 0.16 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 10] STARTING ---
+[GATE 0] Reward: -0.39 +/- 0.09 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 11] STARTING ---
+[GATE 0] Reward: 4.62 +/- 7.93 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 12] STARTING ---
+[GATE 0] Reward: 2.87 +/- 6.03 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 13] STARTING ---
+[GATE 0] Reward: 9.98 +/- 11.03 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 14] STARTING ---
+[GATE 0] Reward: 0.20 +/- 0.78 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 15] STARTING ---
+[GATE 0] Reward: 5.78 +/- 9.58 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 16] STARTING ---
+[GATE 0] Reward: 10.01 +/- 11.65 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 17] STARTING ---
+[GATE 0] Reward: -0.42 +/- 1.01 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 18] STARTING ---
+[GATE 0] Reward: 2.90 +/- 6.50 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 19] STARTING ---
+[GATE 0] Reward: -0.19 +/- 0.23 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 20] STARTING ---
+[GATE 0] Reward: -0.29 +/- 0.12 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 21] STARTING ---
+[GATE 0] Reward: 10.71 +/- 11.88 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 22] STARTING ---
+[GATE 0] Reward: 2.37 +/- 6.19 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 23] STARTING ---
+[GATE 0] Reward: 0.77 +/- 4.05 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 24] STARTING ---
+[GATE 0] Reward: 10.26 +/- 12.19 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 25] STARTING ---
+[GATE 0] Reward: 5.19 +/- 8.66 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 26] STARTING ---
+[GATE 0] Reward: 7.44 +/- 9.94 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 27] STARTING ---
+[GATE 0] Reward: 1.38 +/- 5.09 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 28] STARTING ---
+[GATE 0] Reward: 6.67 +/- 8.53 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 29] STARTING ---
+[GATE 0] Reward: 1.43 +/- 5.38 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 30] STARTING ---
+[GATE 0] Reward: -0.83 +/- 0.70 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 31] STARTING ---
+[GATE 0] Reward: 4.57 +/- 8.07 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 32] STARTING ---
+[GATE 0] Reward: 2.17 +/- 5.94 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 33] STARTING ---
+[GATE 0] Reward: 8.35 +/- 10.57 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 34] STARTING ---
+[GATE 0] Reward: 0.99 +/- 2.41 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 35] STARTING ---
+[GATE 0] Reward: 2.14 +/- 6.16 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 36] STARTING ---
+[GATE 0] Reward: 8.99 +/- 10.81 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 37] STARTING ---
+[GATE 0] Reward: 0.32 +/- 0.34 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 38] STARTING ---
+[GATE 0] Reward: 4.15 +/- 7.10 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 39] STARTING ---
+[GATE 0] Reward: -0.17 +/- 0.15 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 40] STARTING ---
+[GATE 0] Reward: 5.04 +/- 6.77 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 41] STARTING ---
+[GATE 0] Reward: 3.87 +/- 7.43 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 42] STARTING ---
+[GATE 0] Reward: 2.99 +/- 6.88 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 43] STARTING ---
+[GATE 0] Reward: 14.28 +/- 12.25 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 44] STARTING ---
+[GATE 0] Reward: -0.03 +/- 0.29 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 45] STARTING ---
+[GATE 0] Reward: 2.94 +/- 6.61 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 46] STARTING ---
+[GATE 0] Reward: -1.47 +/- 1.00 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 47] STARTING ---
+[GATE 0] Reward: -0.14 +/- 0.17 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 48] STARTING ---
+[GATE 0] Reward: 1.44 +/- 5.41 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 49] STARTING ---
+[GATE 0] Reward: 0.17 +/- 0.39 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 50] STARTING ---
+[GATE 0] Reward: 3.07 +/- 6.62 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 51] STARTING ---
+[GATE 0] Reward: 8.10 +/- 8.39 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 52] STARTING ---
+[GATE 0] Reward: 0.52 +/- 0.96 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 53] STARTING ---
+[GATE 0] Reward: 14.00 +/- 11.75 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 54] STARTING ---
+[GATE 0] Reward: 19.52 +/- 11.35 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 55] STARTING ---
+[GATE 0] Reward: 11.75 +/- 11.24 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 56] STARTING ---
+[GATE 0] Reward: 14.23 +/- 12.82 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 57] STARTING ---
+[GATE 0] Reward: 23.41 +/- 8.55 at 240s
+[GATE 1] Reward: 30.79 +/- 5.27 at 360s
+[GATE 2] Reward: 29.94 +/- 8.18 at 480s
+!!! PRUNED !!! Failed Gate 2
+
+[TRIAL 58] STARTING ---
+[GATE 0] Reward: 27.75 +/- 8.24 at 240s
+[GATE 1] Reward: 29.14 +/- 8.26 at 360s
+[GATE 2] Reward: 29.78 +/- 6.34 at 481s
+!!! PRUNED !!! Failed Gate 2
+
+[TRIAL 59] STARTING ---
+[GATE 0] Reward: 26.55 +/- 9.10 at 240s
+[GATE 1] Reward: 28.33 +/- 7.40 at 360s
+[GATE 2] Reward: 32.90 +/- 3.64 at 480s
+[TRIAL 59] SUCCESS: 32.90, 3.64
+
+[TRIAL 60] STARTING ---
+[GATE 0] Reward: 15.86 +/- 12.52 at 241s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 61] STARTING ---
+[GATE 0] Reward: 15.25 +/- 11.32 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 62] STARTING ---
+[GATE 0] Reward: 10.21 +/- 9.85 at 241s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 63] STARTING ---
+[GATE 0] Reward: 8.21 +/- 9.92 at 240s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 64] STARTING ---
+[GATE 0] Reward: 19.50 +/- 12.16 at 241s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 65] STARTING ---
+[GATE 0] Reward: 22.64 +/- 11.19 at 240s
+[GATE 1] Reward: 24.52 +/- 8.29 at 360s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 66] STARTING ---
+[GATE 0] Reward: 21.04 +/- 11.31 at 241s
+[GATE 1] Reward: 29.78 +/- 5.55 at 360s
+[GATE 2] Reward: 32.04 +/- 4.33 at 480s
+[TRIAL 66] SUCCESS: 32.04, 4.33
+
+[TRIAL 67] STARTING ---
+[GATE 0] Reward: 28.65 +/- 5.18 at 241s
+[GATE 1] Reward: 30.57 +/- 4.62 at 360s
+[GATE 2] Reward: 32.71 +/- 3.20 at 481s
+[TRIAL 67] SUCCESS: 32.71, 3.20
+
+[TRIAL 68] STARTING ---
+[GATE 0] Reward: 24.85 +/- 9.38 at 240s
+[GATE 1] Reward: 30.84 +/- 3.88 at 360s
+[GATE 2] Reward: 30.02 +/- 5.83 at 480s
+!!! PRUNED !!! Failed Gate 2
+
+[TRIAL 69] STARTING ---
+[GATE 0] Reward: 20.44 +/- 9.90 at 240s
+[GATE 1] Reward: 31.84 +/- 4.04 at 360s
+[GATE 2] Reward: 33.07 +/- 3.57 at 481s
+[TRIAL 69] SUCCESS: 33.07, 3.57
+
+[TRIAL 70] STARTING ---
+[GATE 0] Reward: 27.51 +/- 6.00 at 240s
+[GATE 1] Reward: 28.89 +/- 6.69 at 360s
+[GATE 2] Reward: 33.39 +/- 3.26 at 481s
+
+Previous GATE CFG   : 240: 20, 360: 28, 480: 31
+New GATE CFG        : 200: 20, 300: 30, 480: 32
