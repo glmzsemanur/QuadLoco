@@ -46,7 +46,7 @@ parser.add_argument(
 )
 parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
 parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
-parser.add_argument("--action_range", type=int, default=3, help="If sac, specify the action range")
+parser.add_argument("--action_range", type=float, default=3.0, help="If sac, specify the action range")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments

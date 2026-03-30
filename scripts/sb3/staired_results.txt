@@ -300,4 +300,174 @@
 [GATE 2] Reward: 33.39 +/- 3.26 at 481s
 
 Previous GATE CFG   : 240: 20, 360: 28, 480: 31
-New GATE CFG        : 200: 20, 300: 30, 480: 32
+New GATE CFG        : 200: 20, 300: 30, 480: 32[TRIAL 70] SUCCESS: 33.39, 3.26
+
+[TRIAL 71] STARTING ---
+[GATE 0] Reward: 13.23 +/- 10.50 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 72] STARTING ---
+[GATE 0] Reward: 15.67 +/- 10.48 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 73] STARTING ---
+[GATE 0] Reward: -0.01 +/- 0.24 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 74] STARTING ---
+[GATE 0] Reward: 9.93 +/- 8.81 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 75] STARTING ---
+[GATE 0] Reward: 15.35 +/- 12.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 76] STARTING ---
+[GATE 0] Reward: 9.01 +/- 7.18 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 77] STARTING ---
+[GATE 0] Reward: 8.28 +/- 9.38 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 78] STARTING ---
+[GATE 0] Reward: 8.28 +/- 7.93 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 79] STARTING ---
+[GATE 0] Reward: 8.79 +/- 9.09 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 80] STARTING ---
+[GATE 0] Reward: 6.39 +/- 8.81 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 81] STARTING ---
+[GATE 0] Reward: 18.59 +/- 10.79 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 82] STARTING ---
+[GATE 0] Reward: 17.88 +/- 10.77 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 83] STARTING ---
+[GATE 0] Reward: 9.46 +/- 9.08 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 84] STARTING ---
+[GATE 0] Reward: 13.48 +/- 11.55 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 85] STARTING ---
+[GATE 0] Reward: 10.73 +/- 9.95 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 86] STARTING ---
+[GATE 0] Reward: 8.44 +/- 9.15 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 87] STARTING ---
+[GATE 0] Reward: 5.69 +/- 8.39 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 88] STARTING ---
+[GATE 0] Reward: 10.37 +/- 10.84 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 89] STARTING ---
+[GATE 0] Reward: 10.25 +/- 10.65 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 90] STARTING ---
+[GATE 0] Reward: 8.40 +/- 9.48 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 91] STARTING ---
+[GATE 0] Reward: 12.97 +/- 8.53 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 92] STARTING ---
+[GATE 0] Reward: 19.12 +/- 11.05 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 93] STARTING ---
+[GATE 0] Reward: 11.76 +/- 8.05 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 94] STARTING ---
+[GATE 0] Reward: 21.81 +/- 10.83 at 201s
+[GATE 1] Reward: 30.85 +/- 4.83 at 301s
+[GATE 2] Reward: 33.12 +/- 4.17 at 481s
+--- REACHED MAX TIME (9m) --- Ending Trial 94 successfully.
+[TRIAL 94] SUCCESS: 33.12, 4.17
+
+[TRIAL 95] STARTING ---
+[GATE 0] Reward: 9.08 +/- 9.26 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 96] STARTING ---
+[GATE 0] Reward: 19.90 +/- 9.94 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 97] STARTING ---
+[GATE 0] Reward: 0.46 +/- 0.70 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 98] STARTING ---
+[GATE 0] Reward: 13.95 +/- 11.12 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 99] STARTING ---
+[GATE 0] Reward: 29.54 +/- 5.38 at 200s
+[GATE 1] Reward: 29.58 +/- 5.68 at 301s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 100] STARTING ---
+[GATE 0] Reward: 27.98 +/- 7.24 at 200s
+[GATE 1] Reward: 31.28 +/- 5.20 at 300s
+[GATE 2] Reward: 33.14 +/- 5.08 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 100 successfully.
+[TRIAL 100] SUCCESS: 33.14, 5.08
+
+[TRIAL 101] STARTING ---
+[GATE 0] Reward: 27.34 +/- 8.47 at 200s
+[GATE 1] Reward: 29.23 +/- 7.95 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 102] STARTING ---
+[GATE 0] Reward: 31.48 +/- 3.97 at 200s
+[GATE 1] Reward: 31.03 +/- 3.78 at 300s
+[GATE 2] Reward: 32.59 +/- 4.31 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 102 successfully.
+[TRIAL 102] SUCCESS: 32.59, 4.31
+
+[TRIAL 103] STARTING ---
+[GATE 0] Reward: 25.97 +/- 6.40 at 200s
+[GATE 1] Reward: 31.29 +/- 4.17 at 300s
+[GATE 2] Reward: 32.64 +/- 5.31 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 103 successfully.
+[TRIAL 103] SUCCESS: 32.64, 5.31
+
+[TRIAL 104] STARTING ---
+[GATE 0] Reward: 10.57 +/- 9.83 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 105] STARTING ---
+[GATE 0] Reward: 13.74 +/- 8.83 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 106] STARTING ---
+[GATE 0] Reward: 11.16 +/- 10.18 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 107] STARTING ---
+[GATE 0] Reward: 14.10 +/- 8.69 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 108] STARTING ---
+[GATE 0] Reward: 27.62 +/- 7.54 at 200s
+[GATE 1] Reward: 32.97 +/- 3.16 at 300s
+[GATE 2] Reward: 30.78 +/- 3.47 at 480s
+!!! PRUNED !!! Failed Gate 2
+
+[TRIAL 109] STARTING ---

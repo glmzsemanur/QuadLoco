@@ -5,6 +5,7 @@ import time
 import random
 import logging
 import numpy as np
+import optax
 import torch
 import gymnasium as gym
 from datetime import datetime
@@ -30,7 +31,7 @@ simulation_app = app_launcher.app
 
 # --- JAX DEBUG & MEMORY PREVENTERS ---
 os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
-os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" # Recommended for stability
+# os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" # Recommended for stability
 logging.getLogger("jax").setLevel(logging.ERROR)
 logging.getLogger("absl").setLevel(logging.ERROR)
 
@@ -55,8 +56,10 @@ def to_hyperparams(params: dict) -> dict:
         "train_freq": 2**params["train_freq_pow"],
         "gradient_steps": 2**params["gradient_steps_pow"],
         "policy_delay": 2**params["policy_delay_pow"],
-        "policy_kwargs": {"net_arch": [128, 128, 128], "activation_fn": jax.nn.elu},
-        "seed": args_cli.seed,
+        "buffer_size": 8_000_000,
+        "learning_starts": 100,
+        "policy_kwargs": {"layer_norm": True, "net_arch": [512, 256, 128], "activation_fn": jax.nn.elu, "optimizer_class": optax.adamw},
+        "seed": 42
     }
 
 class TimeoutCallback(BaseCallback):
@@ -77,18 +80,14 @@ def main(env_cfg, agent_cfg):
 
     # 2. MANUAL PARAMETERS (Enter Trial 72 values here)
     params = {
-        "gamma": 0.9766639514032978,            # Change these to match your trial
-        "learning_rate": 0.0018441165124470785, 
-        "ent_coef_init": 0.01417841501679298, 
+        "gamma": 0.984234743573426,            # Change these to match your trial
+        "learning_rate": 0.001440190888183548, 
+        "ent_coef_init": 0.006939216567155372, 
         "batch_size_pow": 10,     # 2^10 = 1024
         "train_freq_pow": 3,      # 2^0 = 1
         "gradient_steps_pow": 8,  # 2^0 = 1
-        "policy_delay_pow": 2, 
-        "tau": 0.007335540238399933,
-        "buffer_size": 8_000_000,
-        "learning_starts": 100,
-        "policy_kwargs": {"layer_norm": True, "net_arch": [128, 128, 128], "activation_fn": jax.nn.elu},
-        "seed": 42
+        "policy_delay_pow": 5, 
+        "tau": 0.010237697694697378,
     }
     
     hyperparams = to_hyperparams(params)
@@ -113,7 +112,7 @@ def main(env_cfg, agent_cfg):
     env.action_space = gym.spaces.Box(low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32)
 
     print(f"[DEBUG] Initializing SBX SAC Model...")
-    model = sbx.SAC("MlpPolicy", env, verbose=0, **hyperparams, tensorboard_log="optuna/runs/mama")
+    model = sbx.SAC("MlpPolicy", env, verbose=1, **hyperparams, tensorboard_log="optuna/runs/mama")
 
     # 5. Train
     try:
@@ -125,7 +124,7 @@ def main(env_cfg, agent_cfg):
             total_timesteps=int(5e7), 
             callback=[TimeoutCallback(timeout_seconds), WandbCallback(verbose=1)], 
             progress_bar=True, 
-            log_interval=100
+            log_interval=1000
         )
         
         print(f"[DEBUG] Training finished. Running Final Evaluation...")

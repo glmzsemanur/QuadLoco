@@ -5,6 +5,7 @@ import time
 import random
 import logging
 import numpy as np
+import optax
 import torch
 import gymnasium as gym
 import optuna
@@ -19,7 +20,7 @@ parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Tas
 parser.add_argument("--num_envs", type=int, default=4096, help="Environments.")
 parser.add_argument("--seed", type=int, default=42, help="Seed.")
 parser.add_argument("--action_range", type=float, default=3.0, help="Action range.")
-parser.add_argument("--wandb_project", type=str, default="sac_staired_tuning", help="WandB project.")
+parser.add_argument("--wandb_project", type=str, default="sac_staired512_2tuning", help="WandB project.")
 AppLauncher.add_app_launcher_args(parser)
 args_cli, hydra_args = parser.parse_known_args()
 sys.argv = [sys.argv[0]] + hydra_args
@@ -41,13 +42,13 @@ import QuadLoco.tasks
 
 from optuna.pruners import BasePruner
 class StaircasePruner(BasePruner):
-    def __init__(self, thresholds):
-        self.thresholds = thresholds
+    def __init__(self):
+        self.gates = {0: 20.0, 1: 32.0, 2: 32.0}
     def prune(self, study, trial):
         step = trial.last_step
-        if step is None or step not in self.thresholds:
+        if step is None or step not in self.gates:
             return False
-        return trial.intermediate_values[step] < self.thresholds[step]
+        return trial.intermediate_values[step] < self.gates[step]
     
 class TrialEvalCallback(BaseCallback):
     def __init__(self, trial, eval_env, log_file):
@@ -61,6 +62,7 @@ class TrialEvalCallback(BaseCallback):
         self.is_pruned = False
         self.last_mean_reward = 0.0
         self.last_std_reward = 0.0
+
     def _on_step(self) -> bool:
         elapsed = time.time() - self.start_time
         if elapsed >= 500: # Hard stop at 500 seconds (8m20s) to prevent runaway trials
@@ -95,7 +97,7 @@ def to_hyperparams(params: dict) -> dict:
         "train_freq": 2**params["train_freq_pow"],
         "gradient_steps": 2**params["gradient_steps_pow"],
         "policy_delay": 2**params["policy_delay_pow"],
-        "policy_kwargs": {"layer_norm": True, "net_arch": [128, 128, 128], "activation_fn": jax.nn.elu},
+        "policy_kwargs": {"layer_norm": True, "net_arch": [512, 256, 128], "activation_fn": jax.nn.elu, "optimizer_class": optax.adamw},
         "seed": 42,
         "buffer_size": 8_000_000,
         "learning_starts": 100,
@@ -106,11 +108,11 @@ def main(env_cfg, agent_cfg):
     env_cfg.seed = args_cli.seed
     env_cfg.scene.num_envs = args_cli.num_envs
 
-    study_name = f"tuning_sac_staired"
+    study_name = f"tuning_sac_staired512_2"
     storage_url = f"sqlite:///{study_name}.db"
 
     # Step 0 = 4 mins, Step 1 = 6 mins, Step 2 = 8 mins
-    my_gates = {0: 20.0, 1: 30.0, 2: 32.0}
+    my_gates = {0: 20.0, 1: 32.0, 2: 32.0}
     study = optuna.create_study(
         study_name=study_name, 
         storage=storage_url, 
@@ -132,7 +134,7 @@ def main(env_cfg, agent_cfg):
     }
     hyperparams = to_hyperparams(params)
 
-    with open("staired_results.txt", "a", buffering=1) as f:
+    with open("staired512_2results.txt", "a", buffering=1) as f:
         f.write(f"\n[TRIAL {trial.number}] STARTING ---\n")
         
         run = wandb.init(project=args_cli.wandb_project, sync_tensorboard=True, name=f"trial_{trial.number}", config=hyperparams)
@@ -140,7 +142,7 @@ def main(env_cfg, agent_cfg):
         env = Sb3VecEnvWrapper(env, fast_variant=True)
         env.action_space = gym.spaces.Box(low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32)
         
-        model = sbx.SAC("MlpPolicy", env, verbose=0, **hyperparams, tensorboard_log=f"optuna/prune_runs/{trial.number}")
+        model = sbx.SAC("MlpPolicy", env, verbose=0, **hyperparams, tensorboard_log=f"optuna/staired512_2runs/{trial.number}")
 
         eval_cb = TrialEvalCallback(trial, env, f)
         
@@ -157,8 +159,8 @@ def main(env_cfg, agent_cfg):
                 # Save stable high performers
                 final_reward = eval_cb.last_mean_reward
                 if final_reward > 30:
-                    os.makedirs("staired_best_models", exist_ok=True)
-                    model.save(f"staired_best_models/trial_{trial.number}_FINAL")
+                    os.makedirs("staired512_2best_models", exist_ok=True)
+                    model.save(f"staired512_2best_models/trial_{trial.number}_FINAL")
 
                 study.tell(trial, final_reward)
                 f.write(f"[TRIAL {trial.number}] SUCCESS: {final_reward:.2f}, {eval_cb.last_std_reward:.2f}\n")
