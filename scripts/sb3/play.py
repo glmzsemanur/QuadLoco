@@ -21,7 +21,7 @@ parser.add_argument(
     "--disable_fabric", action="store_true", default=False, help="Disable fabric and use USD I/O operations."
 )
 parser.add_argument("--num_envs", type=int, default=64, help="Number of environments to simulate.")
-parser.add_argument("--task", type=str, default=None, help="Name of the task.")
+parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Name of the task.")
 parser.add_argument(
     "--agent", type=str, default="sb3_sac_cfg_entry_point", help="Name of the RL agent configuration entry point."
 )
@@ -44,9 +44,9 @@ parser.add_argument(
     default=False,
     help="Use a slower SB3 wrapper but keep all the extra training info.",
 )
-parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
-parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
-parser.add_argument("--action_range", type=float, default=3.0, help="If sac, specify the action range")
+parser.add_argument("--ml_framework", type=str, default="jax", choices=["jax", "torch"], help="Machine learning framework to use.")
+parser.add_argument("--algorithm", type=str, default="sac", choices=["ppo", "sac"], help="RL algorithm to use for training.")
+parser.add_argument("--action_range", type=float, default=1.0, help="If sac, specify the action range")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -148,7 +148,28 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     else:
         checkpoint_path = args_cli.checkpoint
     log_dir = os.path.dirname(checkpoint_path)
-
+    # ... (existing code for checkpoint_path logic)
+    
+    # --- AUTO ACTION RANGE DETECTION ---
+    import zipfile
+    import io
+    import torch
+    
+    # We "peek" into the zip to see what the action space was during training
+    # This prevents the "Spaces do not match" error automatically
+    detected_action_range = None
+    if os.path.exists(checkpoint_path):
+        try:
+            # SB3 stores the 'data' file which contains the action_space object
+            model_data = RLAlgorithm.load(checkpoint_path, device="cpu")
+            # Extract the high bound (assuming symmetric low/high)
+            detected_action_range = float(model_data.action_space.high[0])
+            print(f"[INFO] Auto-detected action range from checkpoint: {detected_action_range}")
+        except Exception as e:
+            print(f"[WARNING] Could not auto-detect action range: {e}. Falling back to CLI arg.")
+            detected_action_range = args_cli.action_range
+    del model_data  # free up memory if it was loaded
+    # -----------------------------------
     # set the log directory for the environment (works for all environment types)
     env_cfg.log_dir = log_dir
 
@@ -177,8 +198,14 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     env = Sb3VecEnvWrapper(env, fast_variant=not args_cli.keep_all_info)
     import numpy as np
     if args_cli.algorithm.lower() == "sac":
+        final_range = detected_action_range if detected_action_range is not None else args_cli.action_range
         env.action_space = gym.spaces.Box(
-            low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32)
+            low=-final_range, 
+            high=final_range, 
+            shape=(12,), 
+            dtype=np.float32
+        )
+        print(f"[INFO] Applied Action Space: {env.action_space}")
 
     vec_norm_path = checkpoint_path.replace("/model", "/model_vecnormalize").replace(".zip", ".pkl")
     vec_norm_path = Path(vec_norm_path)

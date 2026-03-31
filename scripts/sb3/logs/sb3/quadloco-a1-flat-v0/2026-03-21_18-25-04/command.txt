@@ -1,0 +1,1 @@
+python train.py --task=quadloco-a1-flat-v0 --headless --algorithm=sac --ml_framework=jax --action_range=6 --wandb_name=sac_jax_action_range_6

@@ -1,0 +1,1 @@
+python train.py --task quadloco-a1-rough-v0 --algorithm sac --ml_framework jax --wandb_name adjust3 --action_range 3 --headless --num_envs 1028

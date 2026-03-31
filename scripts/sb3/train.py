@@ -14,6 +14,8 @@ import signal
 import sys
 from pathlib import Path
 
+import optax
+
 from isaaclab.app import AppLauncher
 import torch
 
@@ -23,7 +25,7 @@ parser.add_argument("--video", action="store_true", default=False, help="Record 
 parser.add_argument("--video_length", type=int, default=200, help="Length of the recorded video (in steps).")
 parser.add_argument("--video_interval", type=int, default=2000, help="Interval between video recordings (in steps).")
 parser.add_argument("--num_envs", type=int, default=None, help="Number of environments to simulate.")
-parser.add_argument("--task", type=str, default=None, help="Name of the task.")
+parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Name of the task.")
 parser.add_argument(
     "--agent", type=str, default=None, help="Name of the RL agent configuration entry point."
 )
@@ -41,8 +43,8 @@ parser.add_argument(
 parser.add_argument(
     "--ray-proc-id", "-rid", type=int, default=None, help="Automatically configured by Ray integration, otherwise None."
 )
-parser.add_argument("--ml_framework", type=str, default="torch", choices=["jax", "torch"], help="Machine learning framework to use.")
-parser.add_argument("--algorithm", type=str, default="ppo", choices=["ppo", "sac"], help="RL algorithm to use for training.")
+parser.add_argument("--ml_framework", type=str, default="jax", choices=["jax", "torch"], help="Machine learning framework to use.")
+parser.add_argument("--algorithm", type=str, default="sac", choices=["ppo", "sac"], help="RL algorithm to use for training.")
 parser.add_argument("--wandb_name", type=str, default="", help="Run name for the wandb log")
 parser.add_argument("--action_range", type=int, default="1", help="If sac, spesify the action range")
 # append AppLauncher cli args
@@ -74,7 +76,6 @@ def cleanup_pbar(*args):
             tqdm_object.close()
     raise KeyboardInterrupt
 
-
 # disable KeyboardInterrupt override
 signal.signal(signal.SIGINT, cleanup_pbar)
 
@@ -95,9 +96,8 @@ if args_cli.ml_framework == "torch":
     if args_cli.algorithm.lower() == "sac":
         from stable_baselines3 import SAC as RLAlgorithm
 elif args_cli.ml_framework.lower() == "jax":
-    # to prevent over-preallocation of vram, we manually allocate it
-    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "true"
-    os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" 
+    # to prevent over-preallocation of vram
+    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
     logging.getLogger("jax").setLevel(logging.WARNING)
     logging.getLogger("absl").setLevel(logging.WARNING)
     import jax.nn
@@ -133,8 +133,6 @@ logger = logging.getLogger(__name__)
 import wandb
 from wandb.integration.sb3 import WandbCallback
 
-import numpy as np
-
 class AdditionalLoggerCallback(BaseCallback):
     def __init__(self, scalar_freq: int = 1, dist_freq: int = 2500, verbose=0):
         super().__init__(verbose)
@@ -156,15 +154,15 @@ class AdditionalLoggerCallback(BaseCallback):
                     "actions/min_action": float(np.min(actions_np)),
                 })
             
-            # 2. Log Action Distributions (Low Frequency OR The Very First Step)
-            if self.n_calls == 1 or self.n_calls % self.dist_freq == 0:
-                # The combined graph
-                log_dict["action_distributions/All_Joints"] = wandb.Histogram(actions_np.flatten())
+            # # 2. Log Action Distributions (Low Frequency OR The Very First Step)
+            # if self.n_calls == 1 or self.n_calls % self.dist_freq == 0:
+            #     # The combined graph
+            #     log_dict["action_distributions/All_Joints"] = wandb.Histogram(actions_np.flatten())
                 
-                # The individual joint graphs
-                n_actions = actions_np.shape[1]
-                for i in range(n_actions):
-                    log_dict[f"action_distributions/joint_{i}"] = wandb.Histogram(actions_np[:, i])
+            #     # The individual joint graphs
+            #     n_actions = actions_np.shape[1]
+            #     for i in range(n_actions):
+            #         log_dict[f"action_distributions/joint_{i}"] = wandb.Histogram(actions_np[:, i])
 
         # 3. Read Native Isaac Lab Data directly
         try:
@@ -184,10 +182,7 @@ class AdditionalLoggerCallback(BaseCallback):
             
         # 4. Push everything we gathered this step to WandB simultaneously
         if log_dict:
-            # # Inject the true SB3 timestep directly into the data payload
             log_dict["timestep"] = self.num_timesteps
-            
-            # Log normally without the step= override!
             wandb.log(log_dict, commit=False)
             
         return True
@@ -237,6 +232,23 @@ class AdditionalLoggerCallback(BaseCallback):
             plt.close(fig)
             print("📊 Final Gaussian distributions uploaded to WandB!")
 
+# class SimpleActionRescale(gym.ActionWrapper):
+#     def __init__(self, env, action_range):
+#         super().__init__(env)
+#         # Manually define the new box to avoid the 'inf' assertion error
+#         self.action_space = gym.spaces.Box(
+#             low=-action_range, 
+#             high=action_range, 
+#             shape=self.env.action_space.shape, 
+#             dtype=np.float32
+#         )
+
+#     def action(self, action):
+#         # This is where you could add scaling logic if needed.
+#         # If your model is already outputting in the 'action_range', 
+#         # just return the action as-is.
+#         return action
+    
 @hydra_task_config(args_cli.task, args_cli.agent)
 def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agent_cfg: dict):
     """Train with stable-baselines agent."""
@@ -274,7 +286,6 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # post-process agent configuration
     agent_cfg = process_sb3_cfg(agent_cfg, env_cfg.scene.num_envs)
-    # read configurations about the agent-training
     policy_arch = agent_cfg.pop("policy")
     n_timesteps = agent_cfg.pop("n_timesteps")
 
@@ -291,6 +302,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # create isaac environment
     env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
+    # if args_cli.algorithm.lower() == "sac":
+    #     print(f"[INFO] Rescaling action space to: {args_cli.action_range}")
+    #     env = SimpleActionRescale(env, args_cli.action_range)
+    
     run = wandb.init(
         project="sb3_self_eval",
         name=args_cli.wandb_name, 
@@ -319,11 +334,17 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # wrap around environment for stable baselines
     env = Sb3VecEnvWrapper(env, fast_variant=not args_cli.keep_all_info)
-    import numpy as np
+
     if args_cli.algorithm == "sac":
         env.action_space = gym.spaces.Box(
             low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32
         )
+        print(f"[INFO] Action space: {env.action_space}")
+    if args_cli.ml_framework == "jax":
+        agent_cfg["policy_kwargs"]["activation_fn"] = jax.nn.elu
+        if agent_cfg["policy_kwargs"]["optimizer_class"].lower() == "optax.adamw":
+            agent_cfg["policy_kwargs"]["optimizer_class"] = optax.adamw
+    
     norm_keys = {"normalize_input", "normalize_value", "clip_obs"}
     norm_args = {}
     for key in norm_keys:
@@ -343,23 +364,25 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         )
     checkpoint_interval = agent_cfg.pop("checkpoint_interval")
     # create agent from stable baselines
-    if args_cli.ml_framework == "jax":
-        agent_cfg["policy_kwargs"]["activation_fn"] = jax.nn.elu
     agent = RLAlgorithm(policy_arch, env, verbose=0, tensorboard_log=log_dir, **agent_cfg) # verbose=0/1/2 for no/yes terminal logs
     if args_cli.checkpoint is not None:
         agent = agent.load(args_cli.checkpoint, env, print_system_info=True)
 
-    # callbacks for agent
     checkpoint_callback = CheckpointCallback(save_freq=checkpoint_interval, save_path=log_dir, name_prefix="model", verbose=2)
-    callbacks = [checkpoint_callback, LogEveryNTimesteps(n_steps=args_cli.log_interval), WandbCallback(gradient_save_freq=10, model_save_path=f"models/{run.id}", verbose=2)] # AdditionalLoggerCallback(), 
-
+    callbacks = [checkpoint_callback, 
+                 AdditionalLoggerCallback(),
+                 LogEveryNTimesteps(n_steps=args_cli.log_interval), 
+                 WandbCallback(gradient_save_freq=10, 
+                #  model_save_path=f"models/{run.id}", 
+                 verbose=2)
+                 ]
     # train the agent
     with contextlib.suppress(KeyboardInterrupt):
         agent.learn(
             total_timesteps=n_timesteps,
             callback=callbacks,
             progress_bar=True,
-            log_interval=None,
+            log_interval=10,
         )
     # save the final model
     agent.save(os.path.join(log_dir, "model"))
@@ -371,19 +394,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         env.save(os.path.join(log_dir, "model_vecnormalize.pkl"))
 
     print(f"Training time: {round(time.time() - start_time, 2)} seconds")
-    # --- THE FIX ---
+
     print("Waiting for WandB to finish syncing files...")
     wandb.finish()  # Forces the script to wait until the image is safely in the cloud
-    # ---------------
- 
-    # close the simulator
-    env.close()
-    # close the simulator
+
     env.close()
 
 
 if __name__ == "__main__":
-    # run the main function
     main()
-    # close sim app
     simulation_app.close()

@@ -31,7 +31,6 @@ simulation_app = app_launcher.app
 
 # --- JAX DEBUG & MEMORY PREVENTERS ---
 os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
-# os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" # Recommended for stability
 logging.getLogger("jax").setLevel(logging.ERROR)
 logging.getLogger("absl").setLevel(logging.ERROR)
 
@@ -57,7 +56,7 @@ def to_hyperparams(params: dict) -> dict:
         "gradient_steps": 2**params["gradient_steps_pow"],
         "policy_delay": 2**params["policy_delay_pow"],
         "buffer_size": 8_000_000,
-        "learning_starts": 100,
+        "learning_starts": 2000,
         "policy_kwargs": {"layer_norm": True, "net_arch": [512, 256, 128], "activation_fn": jax.nn.elu, "optimizer_class": optax.adamw},
         "seed": 42
     }
@@ -80,14 +79,14 @@ def main(env_cfg, agent_cfg):
 
     # 2. MANUAL PARAMETERS (Enter Trial 72 values here)
     params = {
-        "gamma": 0.984234743573426,            # Change these to match your trial
-        "learning_rate": 0.001440190888183548, 
-        "ent_coef_init": 0.006939216567155372, 
-        "batch_size_pow": 10,     # 2^10 = 1024
-        "train_freq_pow": 3,      # 2^0 = 1
-        "gradient_steps_pow": 8,  # 2^0 = 1
-        "policy_delay_pow": 5, 
-        "tau": 0.010237697694697378,
+        "gamma": 0.983100250213744,            # Change these to match your trial
+        "learning_rate": 0.00044689099625712413, 
+        "ent_coef_init": 0.009471776840423638, 
+        "batch_size_pow": 9,     # 2^9 = 512
+        "train_freq_pow": 0,      # 2^0 = 1
+        "gradient_steps_pow": 5,  # 2^0 = 1
+        "policy_delay_pow": 3, 
+        "tau": 0.0023055560568780655,
     }
     
     hyperparams = to_hyperparams(params)
@@ -124,7 +123,7 @@ def main(env_cfg, agent_cfg):
             total_timesteps=int(5e7), 
             callback=[TimeoutCallback(timeout_seconds), WandbCallback(verbose=1)], 
             progress_bar=True, 
-            log_interval=1000
+            log_interval=10
         )
         
         print(f"[DEBUG] Training finished. Running Final Evaluation...")

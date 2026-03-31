@@ -1,0 +1,22 @@
+seed: 42
+policy: MlpPolicy
+n_timesteps: 50000000
+checkpoint_interval: 1000000000
+buffer_size: 1000000
+learning_starts: 100
+policy_kwargs:
+  layer_norm: true
+  net_arch:
+  - 128
+  - 128
+  - 128
+  activation_fn: nn.ELU
+batch_size: 4096
+gamma: 0.97804951062594
+gradient_steps: 512
+learning_rate: 0.0010814935045923588
+policy_delay: 4
+qf_learning_rate: 0.0010814935045923588
+ent_coef: auto_0.004170610714760545
+train_freq: 4
+tau: 0.0012859822722166969

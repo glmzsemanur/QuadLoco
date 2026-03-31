@@ -1,0 +1,12 @@
+seed: 42
+policy: MlpPolicy
+policy_kwargs:
+  activation_fn: nn.ELU
+  net_arch:
+  - 512
+  - 256
+  - 128
+gradient_steps: 512
+ent_coef: auto_0.006
+n_timesteps: 50000000
+checkpoint_interval: 1000000000

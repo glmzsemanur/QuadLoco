@@ -1,0 +1,8 @@
+seed: 42
+policy: MlpPolicy
+n_timesteps: 50000000
+checkpoint_interval: 1000000000
+buffer_size: 1000000
+learning_starts: 100
+policy_kwargs:
+  layer_norm: true

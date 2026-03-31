@@ -1,0 +1,1 @@
+python train.py --task quadloco-a1-rough-v0 --headless --algorithm ppo --ml_framework jax --wandb_name ppo_rough --action_range 3 --num_envs 4096

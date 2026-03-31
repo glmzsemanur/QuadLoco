@@ -1,0 +1,1 @@
+python train.py --task=quadloco-a1-flat-v0 --headless --algorithm=ppo --ml_framework=jax --action_range=100 --wandb_name=ppo_jax_action_range_100
