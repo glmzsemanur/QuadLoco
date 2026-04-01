@@ -1,1 +1,0 @@
-python train.py --task quadloco-a1-flat-v0 --headless --algorithm sac --ml_framework jax --wandb_name default4096 --action_range 3 --num_envs 1024

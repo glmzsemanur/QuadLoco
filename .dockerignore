@@ -13,6 +13,7 @@ docs/
 **/outputs/*
 **/videos/*
 **/wandb/*
+*/scripts/sb3/wandb/*
 *.tmp
 # ignore docker
 docker/cluster/exports/

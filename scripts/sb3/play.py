@@ -81,8 +81,7 @@ if args_cli.ml_framework == "torch":
     elif args_cli.algorithm.lower() == "sac":
         from stable_baselines3 import SAC as RLAlgorithm
 elif args_cli.ml_framework.lower() == "jax":
-    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "true"
-    os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "0.60" 
+    os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
     logging.getLogger("jax").setLevel(logging.WARNING)
     logging.getLogger("absl").setLevel(logging.WARNING)
     import jax.nn

@@ -1,1 +1,0 @@
-python train.py --task quadloco-a1-flat-v0 --headless --algorithm sac --ml_framework torch --wandb_name sac_torch_action_4
