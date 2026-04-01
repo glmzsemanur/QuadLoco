@@ -1,0 +1,368 @@
+
+[TRIAL 0] STARTING ---
+[GATE 0] Reward: 15.06 +/- 7.05 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 1] STARTING ---
+[GATE 0] Reward: 11.57 +/- 6.50 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 2] STARTING ---
+[GATE 0] Reward: 10.04 +/- 7.01 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 3] STARTING ---
+[GATE 0] Reward: 7.18 +/- 6.89 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 4] STARTING ---
+[GATE 0] Reward: 14.33 +/- 5.84 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 5] STARTING ---
+[GATE 0] Reward: 8.89 +/- 6.66 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 6] STARTING ---
+[GATE 0] Reward: 9.40 +/- 6.76 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 7] STARTING ---
+[GATE 0] Reward: 9.99 +/- 7.21 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 8] STARTING ---
+[GATE 0] Reward: -1.26 +/- 0.35 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 9] STARTING ---
+[GATE 0] Reward: 9.83 +/- 7.07 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 10] STARTING ---
+[GATE 0] Reward: 27.92 +/- 10.72 at 200s
+[GATE 1] Reward: 29.77 +/- 11.99 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 11] STARTING ---
+[GATE 0] Reward: 29.59 +/- 9.41 at 200s
+[GATE 1] Reward: 33.51 +/- 8.71 at 300s
+[GATE 2] Reward: 36.10 +/- 5.07 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 11 successfully.
+[TRIAL 11] SUCCESS: 36.10, 5.07
+ | Params: {'gamma': 0.9757968840622676, 'learning_rate': 0.0003102923945805998, 'ent_coef_init': 0.002970201182358022, 'batch_size_pow': 8, 'train_freq_pow': 3, 'gradient_steps_pow': 10, 'policy_delay_pow': 4, 'tau': 0.0011617990556505755}
+[TRIAL 12] STARTING ---
+[GATE 0] Reward: 23.54 +/- 9.07 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 13] STARTING ---
+[GATE 0] Reward: 15.15 +/- 6.52 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 14] STARTING ---
+[GATE 0] Reward: 25.67 +/- 7.86 at 200s
+[GATE 1] Reward: 31.32 +/- 8.91 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 15] STARTING ---
+[GATE 0] Reward: 13.62 +/- 7.34 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 16] STARTING ---
+[GATE 0] Reward: 27.01 +/- 7.73 at 200s
+[GATE 1] Reward: 28.66 +/- 9.30 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 17] STARTING ---
+[GATE 0] Reward: 21.71 +/- 7.98 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 18] STARTING ---
+[GATE 0] Reward: 22.56 +/- 9.42 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 19] STARTING ---
+[GATE 0] Reward: 29.02 +/- 7.47 at 200s
+[GATE 1] Reward: 30.40 +/- 8.39 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 20] STARTING ---
+[GATE 0] Reward: 10.43 +/- 6.98 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 21] STARTING ---
+[GATE 0] Reward: 29.59 +/- 7.24 at 200s
+[GATE 1] Reward: 29.84 +/- 7.63 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 22] STARTING ---
+[GATE 0] Reward: 30.99 +/- 6.94 at 200s
+[GATE 1] Reward: 26.31 +/- 11.94 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 23] STARTING ---
+[GATE 0] Reward: 30.19 +/- 6.69 at 200s
+[GATE 1] Reward: 30.76 +/- 6.77 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 24] STARTING ---
+[GATE 0] Reward: 12.26 +/- 7.45 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 25] STARTING ---
+[GATE 0] Reward: 24.17 +/- 6.97 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 26] STARTING ---
+[GATE 0] Reward: 17.22 +/- 6.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 27] STARTING ---
+[GATE 0] Reward: 14.87 +/- 6.73 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 28] STARTING ---
+[GATE 0] Reward: 36.40 +/- 3.89 at 200s
+[GATE 1] Reward: 36.60 +/- 3.56 at 300s
+[GATE 2] Reward: 37.51 +/- 2.37 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 28 successfully.
+[TRIAL 28] SUCCESS: 37.51, 2.37
+ | Params: {'gamma': 0.9804094429567863, 'learning_rate': 0.0005981717473507419, 'ent_coef_init': 0.00754931119592213, 'batch_size_pow': 8, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.0073733809049834845}
+[TRIAL 29] STARTING ---
+[GATE 0] Reward: 25.25 +/- 7.86 at 200s
+[GATE 1] Reward: 31.78 +/- 7.21 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 30] STARTING ---
+[GATE 0] Reward: 27.22 +/- 7.38 at 200s
+[GATE 1] Reward: 30.03 +/- 7.41 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 31] STARTING ---
+[GATE 0] Reward: 33.41 +/- 8.41 at 200s
+[GATE 1] Reward: 36.66 +/- 2.91 at 300s
+[GATE 2] Reward: 38.03 +/- 1.90 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 31 successfully.
+[TRIAL 31] SUCCESS: 38.03, 1.90
+ | Params: {'gamma': 0.9779342244503323, 'learning_rate': 0.0005801427331830877, 'ent_coef_init': 0.008328615750447478, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.010018298767236847}
+[TRIAL 32] STARTING ---
+[GATE 0] Reward: 31.52 +/- 10.37 at 200s
+[GATE 1] Reward: 36.29 +/- 4.85 at 300s
+[GATE 2] Reward: 36.87 +/- 4.37 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 32 successfully.
+[TRIAL 32] SUCCESS: 36.87, 4.37
+ | Params: {'gamma': 0.9780965221992446, 'learning_rate': 0.0005966787464849054, 'ent_coef_init': 0.008337062362061026, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 3, 'tau': 0.012439897583552323}
+[TRIAL 33] STARTING ---
+[GATE 0] Reward: 35.15 +/- 6.68 at 200s
+[GATE 1] Reward: 37.08 +/- 3.30 at 300s
+[GATE 2] Reward: 35.70 +/- 3.31 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 33 successfully.
+[TRIAL 33] SUCCESS: 35.70, 3.31
+ | Params: {'gamma': 0.9808620520611515, 'learning_rate': 0.0007020849746790112, 'ent_coef_init': 0.007188125025407232, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 2, 'tau': 0.012749120415297412}
+[TRIAL 34] STARTING ---
+[GATE 0] Reward: 35.49 +/- 5.00 at 200s
+[GATE 1] Reward: 36.98 +/- 3.54 at 300s
+[GATE 2] Reward: 37.40 +/- 2.87 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 34 successfully.
+[TRIAL 34] SUCCESS: 37.40, 2.87
+ | Params: {'gamma': 0.9766188123328682, 'learning_rate': 0.0009936885521367128, 'ent_coef_init': 0.01918690062891899, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.011433229899336195}
+[TRIAL 35] STARTING ---
+[GATE 0] Reward: 27.23 +/- 13.02 at 200s
+[GATE 1] Reward: 31.53 +/- 8.10 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 36] STARTING ---
+[GATE 0] Reward: 36.28 +/- 2.26 at 200s
+[GATE 1] Reward: 36.89 +/- 2.80 at 300s
+[GATE 2] Reward: 36.92 +/- 2.78 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 36 successfully.
+[TRIAL 36] SUCCESS: 36.92, 2.78
+ | Params: {'gamma': 0.9805600132875223, 'learning_rate': 0.001233968046394665, 'ent_coef_init': 0.011399034276807812, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 3, 'tau': 0.011678978335130394}
+[TRIAL 37] STARTING ---
+[GATE 0] Reward: 14.07 +/- 6.26 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 38] STARTING ---
+[GATE 0] Reward: 7.72 +/- 7.16 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 39] STARTING ---
+[GATE 0] Reward: 9.56 +/- 7.03 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 40] STARTING ---
+[GATE 0] Reward: 35.80 +/- 5.78 at 200s
+[GATE 1] Reward: 36.24 +/- 4.46 at 300s
+[GATE 2] Reward: 37.26 +/- 2.59 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 40 successfully.
+[TRIAL 40] SUCCESS: 37.26, 2.59
+ | Params: {'gamma': 0.9766551198443296, 'learning_rate': 0.0011898531033334456, 'ent_coef_init': 0.01087266353759061, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.02854563550277613}
+[TRIAL 41] STARTING ---
+[GATE 0] Reward: 36.10 +/- 2.86 at 200s
+[GATE 1] Reward: 36.23 +/- 5.35 at 300s
+[GATE 2] Reward: 38.46 +/- 2.63 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 41 successfully.
+[TRIAL 41] SUCCESS: 38.46, 2.63
+ | Params: {'gamma': 0.9769320816029391, 'learning_rate': 0.001691765412190441, 'ent_coef_init': 0.01065245412121881, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.029337373581777865}
+[TRIAL 42] STARTING ---
+[GATE 0] Reward: 36.74 +/- 2.69 at 200s
+[GATE 1] Reward: 37.41 +/- 4.66 at 300s
+[GATE 2] Reward: 37.35 +/- 4.00 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 42 successfully.
+[TRIAL 42] SUCCESS: 37.35, 4.00
+ | Params: {'gamma': 0.9770481676769242, 'learning_rate': 0.0018747099617667387, 'ent_coef_init': 0.01662954111743763, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.030025046490091186}
+[TRIAL 43] STARTING ---
+[GATE 0] Reward: 34.16 +/- 7.74 at 200s
+[GATE 1] Reward: 36.06 +/- 5.66 at 300s
+[GATE 2] Reward: 35.45 +/- 7.03 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 43 successfully.
+[TRIAL 43] SUCCESS: 35.45, 7.03
+ | Params: {'gamma': 0.978738859090599, 'learning_rate': 0.0019386680356859062, 'ent_coef_init': 0.016517083022273647, 'batch_size_pow': 11, 'train_freq_pow': 2, 'gradient_steps_pow': 9, 'policy_delay_pow': 1, 'tau': 0.03200318301172511}
+[TRIAL 44] STARTING ---
+[GATE 0] Reward: 37.32 +/- 2.55 at 200s
+[GATE 1] Reward: 36.41 +/- 6.42 at 300s
+[GATE 2] Reward: 37.89 +/- 2.33 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 44 successfully.
+[TRIAL 44] SUCCESS: 37.89, 2.33
+ | Params: {'gamma': 0.9763759729821809, 'learning_rate': 0.0015568269217664688, 'ent_coef_init': 0.014831192006955051, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.019014676649788627}
+[TRIAL 45] STARTING ---
+[GATE 0] Reward: 33.09 +/- 6.90 at 200s
+[GATE 1] Reward: 34.43 +/- 8.50 at 300s
+[GATE 2] Reward: 35.62 +/- 6.40 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 45 successfully.
+[TRIAL 45] SUCCESS: 35.62, 6.40
+ | Params: {'gamma': 0.9762976877050306, 'learning_rate': 0.001554208713372075, 'ent_coef_init': 0.014700332818029528, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 6, 'policy_delay_pow': 2, 'tau': 0.01880382876230009}
+[TRIAL 46] STARTING ---
+[GATE 0] Reward: 37.60 +/- 3.02 at 200s
+[GATE 1] Reward: 37.50 +/- 3.85 at 300s
+[GATE 2] Reward: 38.40 +/- 1.91 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 46 successfully.
+[TRIAL 46] SUCCESS: 38.40, 1.91
+ | Params: {'gamma': 0.9775413218834926, 'learning_rate': 0.0014810666941558037, 'ent_coef_init': 0.012878611932088746, 'batch_size_pow': 11, 'train_freq_pow': 1, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.02001020767753981}
+[TRIAL 47] STARTING ---
+[GATE 0] Reward: 30.85 +/- 9.08 at 201s
+[GATE 1] Reward: 30.70 +/- 7.09 at 301s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 48] STARTING ---
+[GATE 0] Reward: 36.12 +/- 5.57 at 200s
+[GATE 1] Reward: 35.79 +/- 3.54 at 301s
+[GATE 2] Reward: 35.42 +/- 3.38 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 48 successfully.
+[TRIAL 48] SUCCESS: 35.42, 3.38
+ | Params: {'gamma': 0.9776137561513262, 'learning_rate': 0.0008387874232019019, 'ent_coef_init': 0.012515323836948993, 'batch_size_pow': 12, 'train_freq_pow': 1, 'gradient_steps_pow': 9, 'policy_delay_pow': 2, 'tau': 0.018710597481684035}
+[TRIAL 49] STARTING ---
+[GATE 0] Reward: 36.04 +/- 6.81 at 200s
+[GATE 1] Reward: 36.54 +/- 4.91 at 300s
+[GATE 2] Reward: 36.48 +/- 4.21 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 49 successfully.
+[TRIAL 49] SUCCESS: 36.48, 4.21
+ | Params: {'gamma': 0.9760399921148092, 'learning_rate': 0.0015885747938839821, 'ent_coef_init': 0.0061119343435443165, 'batch_size_pow': 11, 'train_freq_pow': 1, 'gradient_steps_pow': 7, 'policy_delay_pow': 2, 'tau': 0.016889524238046596}
+[TRIAL 50] STARTING ---
+[GATE 0] Reward: 30.46 +/- 8.09 at 200s
+[GATE 1] Reward: 34.99 +/- 6.53 at 300s
+[GATE 2] Reward: 36.28 +/- 5.52 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 50 successfully.
+[TRIAL 50] SUCCESS: 36.28, 5.52
+ | Params: {'gamma': 0.9802709714164822, 'learning_rate': 0.0007417342360668763, 'ent_coef_init': 0.00961007911078769, 'batch_size_pow': 11, 'train_freq_pow': 1, 'gradient_steps_pow': 5, 'policy_delay_pow': 0, 'tau': 0.023791157518336714}
+[TRIAL 51] STARTING ---
+[GATE 0] Reward: 36.37 +/- 3.29 at 200s
+[GATE 1] Reward: 36.32 +/- 3.74 at 300s
+[GATE 2] Reward: 37.40 +/- 2.02 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 51 successfully.
+[TRIAL 51] SUCCESS: 37.40, 2.02
+ | Params: {'gamma': 0.9772577241611156, 'learning_rate': 0.0010863819806268182, 'ent_coef_init': 0.014372299967858554, 'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.006891937002292621}
+[TRIAL 52] STARTING ---
+[GATE 0] Reward: 34.00 +/- 7.55 at 200s
+[GATE 1] Reward: 35.49 +/- 6.46 at 300s
+[GATE 2] Reward: 33.98 +/- 7.22 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 52 successfully.
+[TRIAL 52] SUCCESS: 33.98, 7.22
+ | Params: {'gamma': 0.9819457818215908, 'learning_rate': 0.0010570729127521302, 'ent_coef_init': 0.01143698445143, 'batch_size_pow': 8, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.0072000800416606335}
+[TRIAL 53] STARTING ---
+[GATE 0] Reward: 36.43 +/- 3.81 at 200s
+[GATE 1] Reward: 37.10 +/- 3.73 at 300s
+[GATE 2] Reward: 36.71 +/- 3.33 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 53 successfully.
+[TRIAL 53] SUCCESS: 36.71, 3.33
+ | Params: {'gamma': 0.9774064079558121, 'learning_rate': 0.0014422021833004298, 'ent_coef_init': 0.01433456696274925, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.005009349711039422}
+[TRIAL 54] STARTING ---
+[GATE 0] Reward: 34.99 +/- 7.88 at 200s
+[GATE 1] Reward: 36.52 +/- 5.10 at 300s
+[GATE 2] Reward: 37.51 +/- 3.17 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 54 successfully.
+[TRIAL 54] SUCCESS: 37.51, 3.17
+ | Params: {'gamma': 0.9757173676203795, 'learning_rate': 0.0017444241477507757, 'ent_coef_init': 0.008035965293481573, 'batch_size_pow': 12, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 2, 'tau': 0.007382853043586085}
+[TRIAL 55] STARTING ---
+[GATE 0] Reward: 26.25 +/- 8.64 at 200s
+[GATE 1] Reward: 31.71 +/- 9.98 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 56] STARTING ---
+[GATE 0] Reward: 34.56 +/- 7.29 at 201s
+[GATE 1] Reward: 35.52 +/- 5.53 at 301s
+[GATE 2] Reward: 36.69 +/- 4.69 at 481s
+--- REACHED MAX TIME (9m) --- Ending Trial 56 successfully.
+[TRIAL 56] SUCCESS: 36.69, 4.69
+ | Params: {'gamma': 0.975184748216471, 'learning_rate': 0.0017120815973280003, 'ent_coef_init': 0.010316514834193496, 'batch_size_pow': 12, 'train_freq_pow': 2, 'gradient_steps_pow': 9, 'policy_delay_pow': 2, 'tau': 0.009834115948747117}
+[TRIAL 57] STARTING ---
+[GATE 0] Reward: 11.21 +/- 7.30 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 58] STARTING ---
+[GATE 0] Reward: 35.50 +/- 5.69 at 200s
+[GATE 1] Reward: 36.35 +/- 3.99 at 301s
+[GATE 2] Reward: 36.06 +/- 4.53 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 58 successfully.
+[TRIAL 58] SUCCESS: 36.06, 4.53
+ | Params: {'gamma': 0.979436783168883, 'learning_rate': 0.0014655735691331269, 'ent_coef_init': 0.006239843647311875, 'batch_size_pow': 11, 'train_freq_pow': 3, 'gradient_steps_pow': 9, 'policy_delay_pow': 2, 'tau': 0.047308239502854635}
+[TRIAL 59] STARTING ---
+[GATE 0] Reward: 31.73 +/- 7.03 at 200s
+[GATE 1] Reward: 34.86 +/- 4.96 at 300s
+[GATE 2] Reward: 36.85 +/- 4.39 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 59 successfully.
+[TRIAL 59] SUCCESS: 36.85, 4.39
+ | Params: {'gamma': 0.9759317714224919, 'learning_rate': 0.000680925450272868, 'ent_coef_init': 0.007687706855270834, 'batch_size_pow': 12, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 1, 'tau': 0.008011558383714831}
+[TRIAL 60] STARTING ---
+[GATE 0] Reward: 37.51 +/- 4.54 at 200s
+[GATE 1] Reward: 37.63 +/- 2.55 at 300s
+[GATE 2] Reward: 37.62 +/- 3.12 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 60 successfully.
+[TRIAL 60] SUCCESS: 37.62, 3.12
+ | Params: {'gamma': 0.9798502690100807, 'learning_rate': 0.0017039512080902384, 'ent_coef_init': 0.011864586758387634, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 2, 'tau': 0.021344747453207785}
+[TRIAL 61] STARTING ---
+[GATE 0] Reward: 36.60 +/- 3.59 at 200s
+[GATE 1] Reward: 36.59 +/- 2.78 at 300s
+[GATE 2] Reward: 36.74 +/- 3.05 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 61 successfully.
+[TRIAL 61] SUCCESS: 36.74, 3.05
+ | Params: {'gamma': 0.9791318992042469, 'learning_rate': 0.0017444513538965997, 'ent_coef_init': 0.012635830712104225, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 2, 'tau': 0.021132097689719995}
+[TRIAL 62] STARTING ---
+[GATE 0] Reward: 28.76 +/- 9.76 at 200s
+[GATE 1] Reward: 32.48 +/- 5.46 at 300s
+[GATE 2] Reward: 34.51 +/- 7.25 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 62 successfully.
+[TRIAL 62] SUCCESS: 34.51, 7.25
+ | Params: {'gamma': 0.9816341476618013, 'learning_rate': 0.001963290857402915, 'ent_coef_init': 0.009372560134981809, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.025394225658808594}
+[TRIAL 63] STARTING ---
+[GATE 0] Reward: 37.54 +/- 2.92 at 200s
+[GATE 1] Reward: 37.22 +/- 3.02 at 300s
+[GATE 2] Reward: 37.56 +/- 1.62 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 63 successfully.
+[TRIAL 63] SUCCESS: 37.56, 1.62
+ | Params: {'gamma': 0.979834581616842, 'learning_rate': 0.0013712931473383603, 'ent_coef_init': 0.00828428992671979, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 2, 'tau': 0.03497900154164454}
+[TRIAL 64] STARTING ---
+[GATE 0] Reward: 37.76 +/- 2.94 at 200s
+[GATE 1] Reward: 37.67 +/- 4.83 at 300s
+[GATE 2] Reward: 38.84 +/- 1.55 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 64 successfully.
+[TRIAL 64] SUCCESS: 38.84, 1.55
+ | Params: {'gamma': 0.9801394360003788, 'learning_rate': 0.0008947722046312956, 'ent_coef_init': 0.011979797598995437, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 3, 'tau': 0.032540556627528645}
+[TRIAL 65] STARTING ---
+[GATE 0] Reward: 38.08 +/- 2.80 at 200s
+[GATE 1] Reward: 36.62 +/- 3.50 at 300s
+[GATE 2] Reward: 37.12 +/- 3.08 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 65 successfully.
+[TRIAL 65] SUCCESS: 37.12, 3.08
+ | Params: {'gamma': 0.9798818611003731, 'learning_rate': 0.0011136045418524078, 'ent_coef_init': 0.017358005301222838, 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 3, 'tau': 0.037284190083560355}
+

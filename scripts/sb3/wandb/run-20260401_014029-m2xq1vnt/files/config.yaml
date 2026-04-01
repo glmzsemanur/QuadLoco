@@ -1,0 +1,222 @@
+_current_progress_remaining:
+    value: 1
+_custom_logger:
+    value: "False"
+_episode_num:
+    value: 0
+_last_episode_starts:
+    value: '[ True  True  True ...  True  True  True]'
+_last_obs:
+    value: |-
+        [[-0.05606634 -0.08751792  0.04986878 ...  0.          0.
+           0.        ]
+         [ 0.00631851 -0.09618937  0.04319174 ...  0.          0.
+           0.        ]
+         [ 0.05552883  0.0117448   0.00327794 ...  0.          0.
+           0.        ]
+         ...
+         [ 0.05258375 -0.04012946 -0.03358038 ...  0.          0.
+           0.        ]
+         [-0.06287807  0.08608467 -0.02760682 ...  0.          0.
+           0.        ]
+         [ 0.05053673 -0.09133995 -0.09170958 ...  0.          0.
+           0.        ]]
+_last_original_obs:
+    value: None
+_logger:
+    value: <stable_baselines3.common.logger.Logger object at 0x71d712b992d0>
+_n_updates:
+    value: 0
+_num_timesteps_at_start:
+    value: 0
+_stats_window_size:
+    value: 100
+_total_timesteps:
+    value: 100000000
+_vec_normalize_env:
+    value: None
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            y7yysbkfgyvb0sv4iju8giyqxad2ceew:
+                codePath: scripts/sb3/tuner.py
+                codePathLocal: tuner.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.1"
+                disk:
+                    /:
+                        total: "244466741248"
+                        used: "188208332800"
+                email: gulmez22@itu.edu.tr
+                executable: /home/semanur/miniconda3/envs/isaac/bin/python
+                git:
+                    commit: 9bd6c02589cb53ffdaafff76378772491e501515
+                    remote: https://github.com/glmzsemanur/QuadLoco.git
+                gpu: NVIDIA GeForce RTX 5070 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Blackwell
+                      cudaCores: 8960
+                      memoryTotal: "17094934528"
+                      name: NVIDIA GeForce RTX 5070 Ti
+                      uuid: GPU-cdca6b6e-42de-575e-d1cd-6b9b682379b0
+                host: PC
+                memory:
+                    total: "33569824768"
+                os: Linux-6.8.0-106-generic-x86_64-with-glibc2.35
+                program: /home/semanur/QuadLoco/scripts/sb3/tuner.py
+                python: CPython 3.11.14
+                root: /home/semanur/QuadLoco/scripts/sb3
+                startedAt: "2026-03-31T22:40:29.832334Z"
+                writerId: y7yysbkfgyvb0sv4iju8giyqxad2ceew
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 12
+                - 35
+                - 45
+                - 50
+                - 105
+            "2":
+                - 1
+                - 12
+                - 35
+                - 45
+                - 50
+                - 105
+            "3":
+                - 1
+                - 2
+                - 13
+                - 16
+                - 22
+                - 35
+                - 41
+            "4": 3.11.14
+            "5": 0.25.0
+            "12": 0.25.0
+            "13": linux-x86_64
+action_noise:
+    value: None
+action_space:
+    value: Box(-1.0, 1.0, (12,), float32)
+actor:
+    value: |-
+        SquashedGaussianActor(
+            # attributes
+            net_arch = [512, 256, 128]
+            action_dim = 12
+            log_std_min = -20
+            log_std_max = 2
+            activation_fn = elu
+        )
+algo:
+    value: SAC
+batch_size:
+    value: 1024
+buffer_size:
+    value: 8000000
+device:
+    value: cuda
+ent_coef:
+    value: auto_0.007188125025407232
+ent_coef_init:
+    value: auto_0.007188125025407232
+ent_coef_state:
+    value: |-
+        TrainState(step=0, apply_fn=<bound method Module.apply of EntropyCoef(
+            # attributes
+            ent_coef_init = 0.007188125025407232
+        )>, params={'log_ent_coef': Array(-4.935325, dtype=float32, weak_type=True)}, tx=GradientTransformationExtraArgs(init=<function chain.<locals>.init_fn at 0x71d70c384900>, update=<function chain.<locals>.update_fn at 0x71d70c384cc0>), opt_state=(ScaleByAdamState(count=Array(0, dtype=int32), mu={'log_ent_coef': Array(0., dtype=float32, weak_type=True)}, nu={'log_ent_coef': Array(0., dtype=float32, weak_type=True)}), EmptyState()))
+env:
+    value: <Sb3VecEnvWrapper<OrderEnforcing<ManagerBasedRLEnv<quadloco-a1-flat-v0>>>>
+ep_info_buffer:
+    value: deque([], maxlen=100)
+ep_success_buffer:
+    value: deque([], maxlen=100)
+gamma:
+    value: 0.9808620520611515
+gradient_steps:
+    value: 128
+initial_qf_learning_rate:
+    value: None
+key:
+    value: '[1773327481 1441649378]'
+learning_rate:
+    value: 0.0007020849746790112
+learning_starts:
+    value: 100
+lr_schedule:
+    value: FloatSchedule(ConstantSchedule(val=0.0007020849746790112))
+n_envs:
+    value: 4096
+n_steps:
+    value: 1
+num_timesteps:
+    value: 0
+observation_space:
+    value: Box(-inf, inf, (48,), float32)
+optimize_memory_usage:
+    value: "False"
+param_resets:
+    value: None
+policy:
+    value: SACPolicy()
+policy_class:
+    value: <class 'sbx.sac.policies.SACPolicy'>
+policy_delay:
+    value: 4
+policy_kwargs:
+    value:
+        activation_fn: jax._src.nn.functions.elu
+        layer_norm: true
+        net_arch:
+            - 512
+            - 256
+            - 128
+        optimizer_class: optax._src.alias.adamw
+qf:
+    value: |-
+        VectorCritic(
+            # attributes
+            net_arch = [512, 256, 128]
+            use_layer_norm = True
+            dropout_rate = 0.0
+            n_critics = 2
+            activation_fn = elu
+            output_dim = 1
+        )
+qf_learning_rate:
+    value: 0.0007020849746790112
+replay_buffer:
+    value: <stable_baselines3.common.buffers.ReplayBuffer object at 0x71d7427d9110>
+replay_buffer_class:
+    value: <class 'stable_baselines3.common.buffers.ReplayBuffer'>
+replay_buffer_kwargs:
+    value: '{}'
+reset_idx:
+    value: 0
+sde_sample_freq:
+    value: -1
+seed:
+    value: 42
+start_time:
+    value: 1774996843764539113
+target_entropy:
+    value: "-12.0"
+tau:
+    value: 0.012749120415297412
+tensorboard_log:
+    value: optuna/sac_hardgatetuning/33
+train_freq:
+    value: 4
+use_sde:
+    value: "False"
+use_sde_at_warmup:
+    value: "False"
+verbose:
+    value: 0

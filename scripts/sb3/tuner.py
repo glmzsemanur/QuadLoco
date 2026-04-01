@@ -19,8 +19,8 @@ parser = argparse.ArgumentParser(description="Optuna Pruning Tuner")
 parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Task name.")
 parser.add_argument("--num_envs", type=int, default=4096, help="Environments.")
 parser.add_argument("--seed", type=int, default=42, help="Seed.")
-parser.add_argument("--action_range", type=float, default=3.0, help="Action range.")
-parser.add_argument("--wandb_project", type=str, default="sac_staired512_2tuning", help="WandB project.")
+parser.add_argument("--action_range", type=float, default=1.0, help="Action range.")
+parser.add_argument("--wandb_project", type=str, default="sac_hardgatetuning", help="WandB project.")
 
 AppLauncher.add_app_launcher_args(parser)
 args_cli, hydra_args = parser.parse_known_args()
@@ -44,7 +44,7 @@ import QuadLoco.tasks
 from optuna.pruners import BasePruner
 class StaircasePruner(BasePruner):
     def __init__(self):
-        self.gates = {0: 20.0, 1: 32.0, 2: 32.0}
+        self.gates = {0: 25.0, 1: 32.0, 2: 32.0}
     def prune(self, study, trial):
         step = trial.last_step
         if step is None or step not in self.gates:
@@ -148,9 +148,9 @@ def main(env_cfg, agent_cfg):
         try:
             # We set a high timestep count; the callback will stop it based on time
             model.learn(
-                log_interval=1000,
+                log_interval=100,
                 total_timesteps=int(1e8), 
-                callback=[eval_cb, WandbCallback(verbose=0)], 
+                callback=[eval_cb, WandbCallback(gradient_save_freq=10, verbose=0)], 
                 progress_bar=True
             )
 

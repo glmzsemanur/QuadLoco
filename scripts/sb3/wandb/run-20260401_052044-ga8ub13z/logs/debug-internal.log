@@ -1,0 +1,21 @@
+{"time":"2026-04-01T05:20:44.409543507+03:00","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-04-01T05:20:44.750356505+03:00","level":"INFO","msg":"stream: created new stream","id":"ga8ub13z"}
+{"time":"2026-04-01T05:20:44.750405598+03:00","level":"INFO","msg":"handler: started","stream_id":"ga8ub13z"}
+{"time":"2026-04-01T05:20:44.750495537+03:00","level":"INFO","msg":"stream: started","id":"ga8ub13z"}
+{"time":"2026-04-01T05:20:44.750508071+03:00","level":"INFO","msg":"writer: started","stream_id":"ga8ub13z"}
+{"time":"2026-04-01T05:20:44.750508622+03:00","level":"INFO","msg":"sender: started","stream_id":"ga8ub13z"}
+{"time":"2026-04-01T05:21:08.138776452+03:00","level":"WARN","msg":"tensorboard: no root directory","error":"timed out after 10s"}
+{"time":"2026-04-01T05:21:08.138897361+03:00","level":"INFO","msg":"tensorboard: tracking new log directory","rootDir":{},"logDir":"LocalOrCloudPath(LocalPath=\"/home/semanur/QuadLoco/scripts/sb3/optuna/sac_hardgatetuning/61/SAC_1\")","namespace":""}
+{"time":"2026-04-01T05:21:08.140049607+03:00","level":"INFO","msg":"tensorboard: saving file","fileLocation":"/home/semanur/QuadLoco/scripts/sb3/optuna/sac_hardgatetuning/61/SAC_1/events.out.tfevents.1775010058.PC.725777.0","runPath":"optuna/sac_hardgatetuning/61/SAC_1/events.out.tfevents.1775010058.PC.725777.0"}
+{"time":"2026-04-01T05:21:38.146062525+03:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":747}
+{"time":"2026-04-01T05:21:38.146131996+03:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":1}
+{"time":"2026-04-01T05:21:43.148849314+03:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":1113}
+{"time":"2026-04-01T05:21:43.149950284+03:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":204}
+{"time":"2026-04-01T05:21:48.150578878+03:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":1405}
+{"time":"2026-04-01T05:21:48.151459521+03:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":125}
+{"time":"2026-04-01T05:29:21.543980806+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-01T05:29:21.832966136+03:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-04-01T05:29:21.836499801+03:00","level":"INFO","msg":"stream: closing","id":"ga8ub13z"}
+{"time":"2026-04-01T05:29:21.836512185+03:00","level":"INFO","msg":"handler: closed","stream_id":"ga8ub13z"}
+{"time":"2026-04-01T05:29:21.836576205+03:00","level":"INFO","msg":"sender: closed","stream_id":"ga8ub13z"}
+{"time":"2026-04-01T05:29:21.836590863+03:00","level":"INFO","msg":"stream: closed","id":"ga8ub13z"}

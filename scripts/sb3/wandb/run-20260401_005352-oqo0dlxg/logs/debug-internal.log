@@ -1,0 +1,17 @@
+{"time":"2026-04-01T00:53:52.996751967+03:00","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-04-01T00:53:53.348636225+03:00","level":"INFO","msg":"stream: created new stream","id":"oqo0dlxg"}
+{"time":"2026-04-01T00:53:53.348686901+03:00","level":"INFO","msg":"handler: started","stream_id":"oqo0dlxg"}
+{"time":"2026-04-01T00:53:53.348802149+03:00","level":"INFO","msg":"stream: started","id":"oqo0dlxg"}
+{"time":"2026-04-01T00:53:53.34881339+03:00","level":"INFO","msg":"writer: started","stream_id":"oqo0dlxg"}
+{"time":"2026-04-01T00:53:53.34882406+03:00","level":"INFO","msg":"sender: started","stream_id":"oqo0dlxg"}
+{"time":"2026-04-01T00:54:16.864562414+03:00","level":"WARN","msg":"tensorboard: no root directory","error":"timed out after 10s"}
+{"time":"2026-04-01T00:54:16.864710614+03:00","level":"INFO","msg":"tensorboard: tracking new log directory","rootDir":{},"logDir":"LocalOrCloudPath(LocalPath=\"/home/semanur/QuadLoco/scripts/sb3/optuna/sac_hardgatetuning/26/SAC_1\")","namespace":""}
+{"time":"2026-04-01T00:54:16.865211531+03:00","level":"INFO","msg":"tensorboard: saving file","fileLocation":"/home/semanur/QuadLoco/scripts/sb3/optuna/sac_hardgatetuning/26/SAC_1/events.out.tfevents.1774994046.PC.272168.0","runPath":"optuna/sac_hardgatetuning/26/SAC_1/events.out.tfevents.1774994046.PC.272168.0"}
+{"time":"2026-04-01T00:56:51.895450813+03:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":2519}
+{"time":"2026-04-01T00:56:51.915966462+03:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":3108}
+{"time":"2026-04-01T00:57:49.987753308+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-01T00:57:50.279129965+03:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-04-01T00:57:50.281976088+03:00","level":"INFO","msg":"stream: closing","id":"oqo0dlxg"}
+{"time":"2026-04-01T00:57:50.281985065+03:00","level":"INFO","msg":"handler: closed","stream_id":"oqo0dlxg"}
+{"time":"2026-04-01T00:57:50.282027536+03:00","level":"INFO","msg":"sender: closed","stream_id":"oqo0dlxg"}
+{"time":"2026-04-01T00:57:50.282035511+03:00","level":"INFO","msg":"stream: closed","id":"oqo0dlxg"}

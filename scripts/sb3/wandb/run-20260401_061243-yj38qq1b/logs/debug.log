@@ -1,0 +1,19 @@
+2026-04-01 06:12:43,449 INFO    MainThread:811958 [wandb_setup.py:_flush():81] Current SDK version is 0.25.0
+2026-04-01 06:12:43,449 INFO    MainThread:811958 [wandb_setup.py:_flush():81] Configure stats pid to 811958
+2026-04-01 06:12:43,449 INFO    MainThread:811958 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-01 06:12:43,449 INFO    MainThread:811958 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /home/semanur/QuadLoco/scripts/sb3/wandb/run-20260401_061243-yj38qq1b/logs/debug.log
+2026-04-01 06:12:43,449 INFO    MainThread:811958 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /home/semanur/QuadLoco/scripts/sb3/wandb/run-20260401_061243-yj38qq1b/logs/debug-internal.log
+2026-04-01 06:12:43,461 INFO    MainThread:811958 [wandb_init.py:init():844] calling init triggers
+2026-04-01 06:12:43,461 INFO    MainThread:811958 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'gamma': 0.9779846830280201, 'learning_rate': 0.0013580378178467021, 'ent_coef': 'auto_0.011798031221431778', 'batch_size': 256, 'tau': 0.04393167058269106, 'train_freq': 2, 'gradient_steps': 1024, 'policy_delay': 4, 'policy_kwargs': {'layer_norm': True, 'net_arch': [512, 256, 128], 'activation_fn': <PjitFunction of <function elu at 0x72a8ca813e20>>, 'optimizer_class': <function adamw at 0x72a8ca34bec0>}, 'seed': 42, 'buffer_size': 8000000, 'learning_starts': 100, '_wandb': {}}
+2026-04-01 06:12:43,461 INFO    MainThread:811958 [wandb_init.py:init():892] starting backend
+2026-04-01 06:12:43,680 INFO    MainThread:811958 [wandb_init.py:init():895] sending inform_init request
+2026-04-01 06:12:43,682 INFO    MainThread:811958 [wandb_init.py:init():903] backend started and connected
+2026-04-01 06:12:43,685 INFO    MainThread:811958 [wandb_init.py:init():973] updated telemetry
+2026-04-01 06:12:43,691 INFO    MainThread:811958 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-04-01 06:12:44,597 INFO    MainThread:811958 [wandb_init.py:init():1042] starting run threads in backend
+2026-04-01 06:12:44,839 INFO    MainThread:811958 [wandb_run.py:_console_start():2524] atexit reg
+2026-04-01 06:12:44,839 INFO    MainThread:811958 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-04-01 06:12:44,839 INFO    MainThread:811958 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-04-01 06:12:44,839 INFO    MainThread:811958 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-04-01 06:12:44,841 INFO    MainThread:811958 [wandb_init.py:init():1082] run started, returning control to user process

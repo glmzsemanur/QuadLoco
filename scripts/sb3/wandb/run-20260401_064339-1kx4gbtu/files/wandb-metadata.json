@@ -1,0 +1,40 @@
+{
+  "os":  "Linux-6.8.0-106-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2026-04-01T03:43:39.736253Z",
+  "program":  "/home/semanur/QuadLoco/scripts/sb3/after_optuna.py",
+  "codePath":  "scripts/sb3/after_optuna.py",
+  "codePathLocal":  "after_optuna.py",
+  "git":  {
+    "remote":  "https://github.com/glmzsemanur/QuadLoco.git",
+    "commit":  "9bd6c02589cb53ffdaafff76378772491e501515"
+  },
+  "email":  "gulmez22@itu.edu.tr",
+  "root":  "/home/semanur/QuadLoco/scripts/sb3",
+  "host":  "PC",
+  "executable":  "/home/semanur/miniconda3/envs/isaac/bin/python",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 5070 Ti",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "244466741248",
+      "used":  "189042946048"
+    }
+  },
+  "memory":  {
+    "total":  "33569824768"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 5070 Ti",
+      "memoryTotal":  "17094934528",
+      "cudaCores":  8960,
+      "architecture":  "Blackwell",
+      "uuid":  "GPU-cdca6b6e-42de-575e-d1cd-6b9b682379b0"
+    }
+  ],
+  "cudaVersion":  "13.1",
+  "writerId":  "xjqdobzorw6mcqx2fyaz443ffr82e3zl"
+}

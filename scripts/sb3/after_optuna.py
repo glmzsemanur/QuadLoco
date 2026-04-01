@@ -56,7 +56,7 @@ def to_hyperparams(params: dict) -> dict:
         "gradient_steps": 2**params["gradient_steps_pow"],
         "policy_delay": 2**params["policy_delay_pow"],
         "buffer_size": 8_000_000,
-        "learning_starts": 2000,
+        "learning_starts": 100,
         "policy_kwargs": {"layer_norm": True, "net_arch": [512, 256, 128], "activation_fn": jax.nn.elu, "optimizer_class": optax.adamw},
         "seed": 42
     }
@@ -76,19 +76,35 @@ def main(env_cfg, agent_cfg):
         args_cli.seed = random.randint(0, 10000)
     env_cfg.seed = args_cli.seed
     env_cfg.scene.num_envs = args_cli.num_envs
+#     [TRIAL 41] SUCCESS: 38.46, 2.63
+#  | Params: {'gamma': 0.9769320816029391, 'learning_rate': 0.001691765412190441, 'ent_coef_init': 0.01065245412121881, 
+#             'batch_size_pow': 9, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.029337373581777865}
+# [TRIAL 31] SUCCESS: 38.03, 1.90
+#  | Params: {'gamma': 0.9779342244503323, 'learning_rate': 0.0005801427331830877, 'ent_coef_init': 0.008328615750447478, 'batch_size_pow': 9, 
+# 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.010018298767236847}
+# [TRIAL 65] SUCCESS: 37.12, 3.08
+#  | Params: {'gamma': 0.9798818611003731, 'learning_rate': 0.0011136045418524078, 'ent_coef_init': 0.017358005301222838, 
+# 'batch_size_pow': 8, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 3, 'tau': 0.037284190083560355}
+# [TRIAL 63] SUCCESS: 37.56, 1.62
+#  | Params: {'gamma': 0.979834581616842, 'learning_rate': 0.0013712931473383603, 'ent_coef_init': 0., 'batch_size_pow': 8, 'train_freq_pow': 1, 
+# 'gradient_steps_pow': 10, 'policy_delay_pow': 2, 'tau': 0.03497900154164454}
+# [
+# [TRIAL 53] SUCCESS: 36.71, 3.33
+#  | Params: {'gamma': 0.9774064079558121, 'learning_rate': 0.0014422021833004298, 'ent_coef_init': 0.01433456696274925, 'batch_size_pow': 10,
+#  'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.005009349711039422}
 
     # 2. MANUAL PARAMETERS (Enter Trial 72 values here)
     params = {
-        "gamma": 0.983100250213744,            # Change these to match your trial
-        "learning_rate": 0.00044689099625712413, 
-        "ent_coef_init": 0.009471776840423638, 
-        "batch_size_pow": 9,     # 2^9 = 512
-        "train_freq_pow": 0,      # 2^0 = 1
-        "gradient_steps_pow": 5,  # 2^0 = 1
-        "policy_delay_pow": 3, 
-        "tau": 0.0023055560568780655,
+        "gamma": 0.984234743573426,            # Change these to match your trial
+        "learning_rate": 0.001440190888183548, 
+        "ent_coef_init": 0.006939216567155372, 
+        "batch_size_pow": 10,     # 2^8 = 256
+        "train_freq_pow": 3,      # 2^1 = 2
+        "gradient_steps_pow": 8,  # 2^10 = 1024
+        "policy_delay_pow": 5, 
+        "tau": 0.010237697694697378,
     }
-    
+
     hyperparams = to_hyperparams(params)
     run_name = f"manual_verify_{datetime.now().strftime('%H%M%S')}"
     
@@ -123,7 +139,7 @@ def main(env_cfg, agent_cfg):
             total_timesteps=int(5e7), 
             callback=[TimeoutCallback(timeout_seconds), WandbCallback(verbose=1)], 
             progress_bar=True, 
-            log_interval=10
+            log_interval= 100
         )
         
         print(f"[DEBUG] Training finished. Running Final Evaluation...")
