@@ -1,0 +1,1 @@
+python train.py --algorithm sac --headless --task robotlab-a1-flat-v0 --num_envs 1024 --wandb_name sac_his_params_my_actions

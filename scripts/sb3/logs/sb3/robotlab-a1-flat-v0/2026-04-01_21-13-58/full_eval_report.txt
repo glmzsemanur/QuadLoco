@@ -1,0 +1,26 @@
+Report Generated: 2026-04-02 14:37:27.996547
+Survival_Rate_Pct: 4.248047
+Metrics/base_velocity/error_vel_xy: 0.000964
+Episode_Reward_lin_vel_z_l2: -0.000032
+Episode_Reward_ang_vel_xy_l2: -0.000049
+Episode_Reward_joint_torques_l2: -0.000071
+Episode_Reward_joint_acc_l2: -0.000058
+Episode_Reward_joint_pos_limits: -0.000039
+Episode_Reward_joint_power: -0.000004
+Episode_Reward_stand_still: -0.000034
+Episode_Reward_joint_pos_penalty: -0.000655
+Episode_Reward_joint_mirror: -0.000014
+Episode_Reward_action_rate_l2: -0.000333
+Episode_Reward_undesired_contacts: -0.000021
+Episode_Reward_contact_forces: -0.000001
+Episode_Reward_track_lin_vel_xy_exp: 0.001581
+Episode_Reward_track_ang_vel_z_exp: 0.001077
+Episode_Reward_feet_contact_without_cmd: 0.000000
+Episode_Reward_feet_height_body: -0.000046
+Episode_Reward_upward: 0.003727
+Metrics_base_velocity_error_vel_yaw: 0.000669
+Episode_Termination_time_out: 0.001000
+Episode_Termination_terrain_out_of_bounds: 0.000000
+Cumulative_Reward_Mean: 100.561920
+Action_Space_Low: [-13.07, -12.50, -3.67, -13.50, -14.37, -3.51, -9.13, -5.38, -4.45, -11.73, -5.67, -3.41]
+Action_Space_High: [13.03, 17.21, 11.49, 18.36, 12.78, 9.45, 9.56, 6.36, 8.46, 11.41, 7.99, 7.53]

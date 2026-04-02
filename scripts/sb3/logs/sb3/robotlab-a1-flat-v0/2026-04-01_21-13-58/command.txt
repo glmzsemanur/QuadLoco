@@ -1,0 +1,1 @@
+python train.py --wandb_name ppo_robotlab --task robotlab-a1-flat-v0 --headless --algorithm ppo

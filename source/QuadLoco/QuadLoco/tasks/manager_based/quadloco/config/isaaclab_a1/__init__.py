@@ -12,7 +12,7 @@ from . import agents
 ##
 
 gym.register(
-    id="quadloco-a1-flat-v0",
+    id="isaaclab-a1-flat-v0",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={

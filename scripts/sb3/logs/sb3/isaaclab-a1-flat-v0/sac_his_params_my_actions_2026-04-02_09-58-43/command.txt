@@ -1,0 +1,1 @@
+python train.py --headless --algorithm sac --wandb_name sac_his_params_my_actions --num_envs 1024

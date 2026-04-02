@@ -1,18 +1,28 @@
-import subprocess #  ["ppo", "torch", 100], ["ppo", "jax", 100], 
-# for algorithm, ml_framework, action_range in [["sac", "jax", 5], ["sac", "jax", 4], ["sac", "jax", 3], ["sac", "jax", 2], ["sac", "jax", 1]]:
-for num_envs in [256, 512, 1028, 2048, 4096]:
-    print(f"\n=== Starting training")
+import subprocess
+
+# List of configurations to run: [task_name, algorithm, action_range]
+runs = [
+    # ["isaaclab-a1-flat-v0", "ppo", 100],
+    ["isaaclab-a1-flat-v0", "sac", 1],
+]
+
+for task_name, algorithm, action_range in runs:
+    # Derive wandb_name automatically (e.g. quadloco-a1-rough-v0 -> rough)
+    task_suffix = task_name.split('-')[2] if '-' in task_name else task_name
+    wandb_name = f"{algorithm}_action_{action_range}_{task_suffix}"
+
+    print(f"\n=== Starting training: {wandb_name} ===")
     cmd = [
         "python",
         "train.py",
-        "--task=quadloco-a1-rough-v0",
+        f"--task={task_name}",
         "--headless",
-        f"--algorithm=sac",
-        f"--ml_framework=jax",
-        f"--action_range=3",
-        f"--wandb_name=sac_action_range_3_{num_envs}_320grad",
-        f"--num_envs={num_envs}"
+        f"--algorithm={algorithm}",
+        "--ml_framework=jax",
+        f"--action_range={action_range}",
+        f"--wandb_name={wandb_name}"
     ]
     subprocess.run(cmd, check=True)
-    print(f"\n=== Finished training ===\n")
+    print(f"\n=== Finished training: {wandb_name} ===\n")
+
 print("\nAll trainings completed.")

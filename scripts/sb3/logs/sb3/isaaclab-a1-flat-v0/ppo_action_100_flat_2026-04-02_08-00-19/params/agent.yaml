@@ -1,0 +1,26 @@
+seed: 42
+n_timesteps: 50000000
+policy: MlpPolicy
+n_steps: 24
+n_minibatches: 4
+gae_lambda: 0.95
+gamma: 0.99
+n_epochs: 5
+ent_coef: 0.005
+learning_rate: 0.001
+clip_range: 0.2
+policy_kwargs:
+  activation_fn: nn.ELU
+  net_arch:
+  - 512
+  - 256
+  - 128
+  optimizer_kwargs:
+    eps: 1.0e-08
+  ortho_init: false
+vf_coef: 1.0
+max_grad_norm: 1.0
+normalize_input: true
+normalize_value: false
+clip_obs: 10.0
+checkpoint_interval: 1000000000

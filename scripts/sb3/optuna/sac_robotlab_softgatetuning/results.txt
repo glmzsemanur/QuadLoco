@@ -1,0 +1,384 @@
+
+[TRIAL 1] STARTING ---
+[GATE 0] Reward: -190.67 +/- 98.84 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 2] STARTING ---
+[GATE 0] Reward: -10.17 +/- 12.81 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 3] STARTING ---
+[GATE 0] Reward: -216.05 +/- 83.74 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 4] STARTING ---
+[GATE 0] Reward: -243.20 +/- 114.72 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 5] STARTING ---
+[GATE 0] Reward: -245.29 +/- 103.34 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 6] STARTING ---
+[GATE 0] Reward: -183.15 +/- 76.60 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 7] STARTING ---
+[GATE 0] Reward: -275.61 +/- 120.12 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 8] STARTING ---
+[GATE 0] Reward: -92.59 +/- 13.40 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 9] STARTING ---
+[GATE 0] Reward: -181.58 +/- 84.83 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 10] STARTING ---
+[GATE 0] Reward: -167.73 +/- 83.21 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 11] STARTING ---
+[GATE 0] Reward: -45.48 +/- 28.31 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 12] STARTING ---
+[GATE 0] Reward: -28.77 +/- 16.92 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 13] STARTING ---
+[GATE 0] Reward: -86.91 +/- 25.91 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 14] STARTING ---
+[GATE 0] Reward: -40.41 +/- 15.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 15] STARTING ---
+[GATE 0] Reward: -60.65 +/- 26.12 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 16] STARTING ---
+[GATE 0] Reward: -142.38 +/- 65.58 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 17] STARTING ---
+[GATE 0] Reward: -55.17 +/- 12.67 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 18] STARTING ---
+[GATE 0] Reward: -229.20 +/- 106.08 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 19] STARTING ---
+[GATE 0] Reward: -38.21 +/- 13.08 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 20] STARTING ---
+[GATE 0] Reward: -117.86 +/- 63.33 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 21] STARTING ---
+[GATE 0] Reward: -162.06 +/- 52.45 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 22] STARTING ---
+[GATE 0] Reward: -55.49 +/- 12.76 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 23] STARTING ---
+[GATE 0] Reward: -76.45 +/- 10.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 24] STARTING ---
+[GATE 0] Reward: -85.17 +/- 22.46 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 25] STARTING ---
+[GATE 0] Reward: -37.32 +/- 20.05 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 26] STARTING ---
+[GATE 0] Reward: -190.97 +/- 98.77 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 27] STARTING ---
+[GATE 0] Reward: -62.79 +/- 24.10 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 28] STARTING ---
+[GATE 0] Reward: -73.13 +/- 22.77 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 29] STARTING ---
+[GATE 0] Reward: -97.85 +/- 43.90 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 30] STARTING ---
+[GATE 0] Reward: -156.30 +/- 96.26 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 31] STARTING ---
+[GATE 0] Reward: -54.49 +/- 42.39 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 32] STARTING ---
+[GATE 0] Reward: -38.91 +/- 35.92 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 33] STARTING ---
+[GATE 0] Reward: -95.19 +/- 35.60 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 34] STARTING ---
+[GATE 0] Reward: -72.17 +/- 14.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 35] STARTING ---
+[GATE 0] Reward: -2.15 +/- 33.24 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 36] STARTING ---
+[GATE 0] Reward: 0.52 +/- 35.60 at 200s
+[GATE 1] Reward: 4.13 +/- 42.17 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 37] STARTING ---
+[GATE 0] Reward: -100.46 +/- 24.48 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 38] STARTING ---
+[GATE 0] Reward: -62.58 +/- 12.27 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 39] STARTING ---
+[GATE 0] Reward: -62.45 +/- 26.64 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 40] STARTING ---
+[GATE 0] Reward: -100.16 +/- 18.54 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 41] STARTING ---
+[GATE 0] Reward: -14.97 +/- 12.91 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 42] STARTING ---
+[GATE 0] Reward: -23.10 +/- 6.47 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 43] STARTING ---
+[GATE 0] Reward: -98.62 +/- 32.93 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 44] STARTING ---
+[GATE 0] Reward: -25.31 +/- 17.75 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 45] STARTING ---
+[GATE 0] Reward: -65.42 +/- 37.57 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 46] STARTING ---
+[GATE 0] Reward: -50.72 +/- 12.52 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 47] STARTING ---
+[GATE 0] Reward: -9.17 +/- 18.32 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 48] STARTING ---
+[GATE 0] Reward: -139.25 +/- 48.77 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 49] STARTING ---
+[GATE 0] Reward: -50.10 +/- 23.75 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 50] STARTING ---
+[GATE 0] Reward: -97.58 +/- 29.95 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 51] STARTING ---
+[GATE 0] Reward: -120.78 +/- 37.04 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 52] STARTING ---
+[GATE 0] Reward: -41.17 +/- 15.92 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 53] STARTING ---
+[GATE 0] Reward: -67.83 +/- 24.43 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 54] STARTING ---
+[GATE 0] Reward: -73.21 +/- 10.77 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 55] STARTING ---
+[GATE 0] Reward: -32.48 +/- 7.97 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 56] STARTING ---
+[GATE 0] Reward: -60.83 +/- 18.99 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 57] STARTING ---
+[GATE 0] Reward: 6.10 +/- 15.45 at 200s
+[GATE 1] Reward: 22.71 +/- 21.56 at 300s
+[GATE 2] Reward: 34.30 +/- 28.55 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 57 successfully.
+[TRIAL 57] SUCCESS: 34.30, 28.55
+ | Params: {'gamma': 0.9824857476150367, 'learning_rate': 0.0010224995348785397, 'ent_coef_init': 0.01809509599812305, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 7, 'policy_delay_pow': 2, 'tau': 0.031137542038848547}
+[TRIAL 58] STARTING ---
+[GATE 0] Reward: -75.03 +/- 12.94 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 59] STARTING ---
+[GATE 0] Reward: -139.58 +/- 50.37 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 60] STARTING ---
+[GATE 0] Reward: -52.73 +/- 19.38 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 61] STARTING ---
+[GATE 0] Reward: -68.96 +/- 31.71 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 62] STARTING ---
+[GATE 0] Reward: -63.81 +/- 19.67 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 63] STARTING ---
+[GATE 0] Reward: -32.22 +/- 10.03 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 64] STARTING ---
+[GATE 0] Reward: 4.11 +/- 26.21 at 200s
+[GATE 1] Reward: 13.48 +/- 28.10 at 300s
+[GATE 2] Reward: 17.75 +/- 33.61 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 64 successfully.
+[TRIAL 64] SUCCESS: 17.75, 33.61
+ | Params: {'gamma': 0.9790566742437803, 'learning_rate': 0.0012841371529182018, 'ent_coef_init': 0.015499353699608106, 'batch_size_pow': 10, 'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.02944789955968981}
+[TRIAL 65] STARTING ---
+[GATE 0] Reward: -2.84 +/- 16.46 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 66] STARTING ---
+[GATE 0] Reward: -49.72 +/- 10.06 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 67] STARTING ---
+[GATE 0] Reward: 2.36 +/- 13.49 at 200s
+[GATE 1] Reward: 17.36 +/- 23.08 at 300s
+[GATE 2] Reward: 27.59 +/- 21.67 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 67 successfully.
+[TRIAL 67] SUCCESS: 27.59, 21.67
+ | Params: {'gamma': 0.9768171830879911, 'learning_rate': 0.001185162901883821, 'ent_coef_init': 0.010695935544520111, 'batch_size_pow': 9, 'train_freq_pow': 1, 'gradient_steps_pow': 8, 'policy_delay_pow': 2, 'tau': 0.042512763926143476}
+[TRIAL 68] STARTING ---
+[GATE 0] Reward: -24.63 +/- 22.92 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 69] STARTING ---
+[GATE 0] Reward: -12.04 +/- 13.89 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 70] STARTING ---
+[GATE 0] Reward: -5.21 +/- 10.23 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 71] STARTING ---
+[GATE 0] Reward: 41.85 +/- 25.38 at 200s
+[GATE 1] Reward: 41.83 +/- 25.33 at 300s
+[GATE 2] Reward: 41.92 +/- 21.78 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 71 successfully.
+[TRIAL 71] SUCCESS: 41.92, 21.78
+ | Params: {'gamma': 0.9794351310525954, 'learning_rate': 0.001595632996090869, 'ent_coef_init': 0.013726979298876615, 'batch_size_pow': 9, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 1, 'tau': 0.023173022926729105}
+[TRIAL 72] STARTING ---
+[GATE 0] Reward: 21.40 +/- 21.50 at 200s
+[GATE 1] Reward: 20.53 +/- 22.69 at 300s
+[GATE 2] Reward: 25.20 +/- 22.88 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 72 successfully.
+[TRIAL 72] SUCCESS: 25.20, 22.88
+ | Params: {'gamma': 0.9792356437223606, 'learning_rate': 0.001365587798117097, 'ent_coef_init': 0.014170095811418208, 'batch_size_pow': 9, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 1, 'tau': 0.0219123643819345}
+[TRIAL 73] STARTING ---
+[GATE 0] Reward: 7.12 +/- 23.38 at 200s
+[GATE 1] Reward: 6.11 +/- 19.75 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 74] STARTING ---
+[GATE 0] Reward: -0.66 +/- 16.24 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 75] STARTING ---
+[GATE 0] Reward: -7.26 +/- 19.74 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 76] STARTING ---
+[GATE 0] Reward: 1.17 +/- 23.35 at 200s
+[GATE 1] Reward: -0.97 +/- 27.81 at 300s
+!!! PRUNED !!! Failed Gate 1
+
+[TRIAL 77] STARTING ---
+[GATE 0] Reward: -2.08 +/- 31.33 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 78] STARTING ---
+[GATE 0] Reward: -0.19 +/- 23.10 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 79] STARTING ---
+[GATE 0] Reward: -46.61 +/- 18.18 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 80] STARTING ---
+[GATE 0] Reward: -10.31 +/- 11.30 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 81] STARTING ---
+[GATE 0] Reward: -40.20 +/- 17.06 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 82] STARTING ---
+[GATE 0] Reward: -9.70 +/- 18.43 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 83] STARTING ---
+[GATE 0] Reward: -8.01 +/- 22.16 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 84] STARTING ---
+[GATE 0] Reward: -19.12 +/- 16.91 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 85] STARTING ---
+[GATE 0] Reward: 9.86 +/- 21.81 at 200s
+[GATE 1] Reward: 11.08 +/- 24.94 at 300s
+[GATE 2] Reward: 19.61 +/- 25.13 at 480s
+--- REACHED MAX TIME (9m) --- Ending Trial 85 successfully.
+[TRIAL 85] SUCCESS: 19.61, 25.13
+ | Params: {'gamma': 0.9776604503312667, 'learning_rate': 0.001941086528829482, 'ent_coef_init': 0.006303622195775383, 'batch_size_pow': 9, 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 1, 'tau': 0.028353658992038257}
+[TRIAL 86] STARTING ---
+[GATE 0] Reward: -40.01 +/- 28.31 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 87] STARTING ---
+[GATE 0] Reward: -109.43 +/- 36.60 at 201s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 88] STARTING ---
+[GATE 0] Reward: -16.90 +/- 21.15 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 89] STARTING ---
+[GATE 0] Reward: -31.41 +/- 11.71 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 90] STARTING ---
+[GATE 0] Reward: -15.97 +/- 11.74 at 200s
+!!! PRUNED !!! Failed Gate 0
+
+[TRIAL 91] STARTING ---
+[GATE 0] Reward: 9.11 +/- 19.33 at 200s

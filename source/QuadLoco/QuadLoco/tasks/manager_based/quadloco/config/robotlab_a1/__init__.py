@@ -10,7 +10,7 @@ from . import agents
 ##
 
 gym.register(
-    id="RobotLab-Velocity-Flat-Unitree-A1-v0",
+    id="robotlab-a1-flat-v0",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={

@@ -1,0 +1,4 @@
+Survival: 100.00%
+Reward: 37.04
+VelErr: 0.0014
+Effort: -0.0001

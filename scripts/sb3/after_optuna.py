@@ -58,7 +58,7 @@ def to_hyperparams(params: dict) -> dict:
         "buffer_size": 8_000_000,
         "learning_starts": 100,
         "policy_kwargs": {"layer_norm": True, "net_arch": [512, 256, 128], "activation_fn": jax.nn.elu, "optimizer_class": optax.adamw},
-        "seed": 42
+        "seed": 42,
     }
 
 class TimeoutCallback(BaseCallback):
@@ -92,17 +92,20 @@ def main(env_cfg, agent_cfg):
 # [TRIAL 53] SUCCESS: 36.71, 3.33
 #  | Params: {'gamma': 0.9774064079558121, 'learning_rate': 0.0014422021833004298, 'ent_coef_init': 0.01433456696274925, 'batch_size_pow': 10,
 #  'train_freq_pow': 2, 'gradient_steps_pow': 8, 'policy_delay_pow': 3, 'tau': 0.005009349711039422}
-
+# [TRIAL 71] SUCCESS: 41.92, 21.78
+#  | Params: {'gamma': 0.9794351310525954, 'learning_rate': 0.001595632996090869, 'ent_coef_init': 0.013726979298876615, 'batch_size_pow': 9, 
+# 'train_freq_pow': 1, 'gradient_steps_pow': 10, 'policy_delay_pow': 1, 'tau': 0.023173022926729105}
+# [
     # 2. MANUAL PARAMETERS (Enter Trial 72 values here)
     params = {
-        "gamma": 0.984234743573426,            # Change these to match your trial
-        "learning_rate": 0.001440190888183548, 
-        "ent_coef_init": 0.006939216567155372, 
-        "batch_size_pow": 10,     # 2^8 = 256
-        "train_freq_pow": 3,      # 2^1 = 2
-        "gradient_steps_pow": 8,  # 2^10 = 1024
-        "policy_delay_pow": 5, 
-        "tau": 0.010237697694697378,
+        "gamma": 0.9794351310525954,            # Change these to match your trial
+        "learning_rate": 0.001595632996090869, 
+        "ent_coef_init": 0.013726979298876615, 
+        "batch_size_pow": 9,     # 2^8 = 256
+        "train_freq_pow": 1,      # 2^1 = 2
+        "gradient_steps_pow": 10,  # 2^10 = 1024
+        "policy_delay_pow": 1, 
+        "tau": 0.023173022926729105,
     }
 
     hyperparams = to_hyperparams(params)
@@ -136,14 +139,14 @@ def main(env_cfg, agent_cfg):
         print(f"[DEBUG] Beginning {timeout_seconds}s training run...")
         
         model.learn(
-            total_timesteps=int(5e7), 
+            total_timesteps=int(5e8), 
             callback=[TimeoutCallback(timeout_seconds), WandbCallback(verbose=1)], 
             progress_bar=True, 
-            log_interval= 100
+            log_interval= 1
         )
         
         print(f"[DEBUG] Training finished. Running Final Evaluation...")
-        mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=32)
+        mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=4096)
         print(f"[RESULT] Final Reward: {mean_reward:.4f} +/- {std_reward:.4f}")
         
     except Exception as e:

@@ -22,10 +22,10 @@ import torch
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with Stable-Baselines3.")
 parser.add_argument("--video", action="store_true", default=False, help="Record videos during training.")
-parser.add_argument("--video_length", type=int, default=200, help="Length of the recorded video (in steps).")
-parser.add_argument("--video_interval", type=int, default=2000, help="Interval between video recordings (in steps).")
+parser.add_argument("--video_length", type=int, default=1000, help="Length of the recorded video (in steps).")
+parser.add_argument("--video_interval", type=int, default=50_000_000, help="Interval between video recordings (in steps).")
 parser.add_argument("--num_envs", type=int, default=None, help="Number of environments to simulate.")
-parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Name of the task.")
+parser.add_argument("--task", type=str, required=True, default=None, help="Name of the task.")
 parser.add_argument(
     "--agent", type=str, default=None, help="Name of the RL agent configuration entry point."
 )
@@ -44,9 +44,8 @@ parser.add_argument(
     "--ray-proc-id", "-rid", type=int, default=None, help="Automatically configured by Ray integration, otherwise None."
 )
 parser.add_argument("--ml_framework", type=str, default="jax", choices=["jax", "torch"], help="Machine learning framework to use.")
-parser.add_argument("--algorithm", type=str, default="sac", choices=["ppo", "sac"], help="RL algorithm to use for training.")
+parser.add_argument("--algorithm", type=str, required=True, default="None", choices=["ppo", "sac"], help="RL algorithm to use for training.")
 parser.add_argument("--wandb_name", type=str, default="", help="Run name for the wandb log")
-parser.add_argument("--action_range", type=int, default="1", help="If sac, spesify the action range")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -134,8 +133,9 @@ import wandb
 from wandb.integration.sb3 import WandbCallback
 
 class AdditionalLoggerCallback(BaseCallback):
-    def __init__(self, scalar_freq: int = 1, dist_freq: int = 2500, verbose=0):
+    def __init__(self, log_dir: str = "", scalar_freq: int = 1, dist_freq: int = 2500, verbose=0):
         super().__init__(verbose)
+        self.log_dir = log_dir
         self.scalar_freq = scalar_freq  # Fast logging for numbers 
         self.dist_freq = dist_freq      # Slower logging for heavy histograms
 
@@ -186,69 +186,8 @@ class AdditionalLoggerCallback(BaseCallback):
             wandb.log(log_dict, commit=False)
             
         return True
-    def _on_training_end(self) -> None:
-        """
-        This triggers exactly once when the total_timesteps limit is reached.
-        We will draw the true, smooth Gaussian KDE curves here!
-        """
-        print("🎉 Training complete! Generating final continuous Gaussian plots...")
-        
-        # We can safely use Matplotlib here because training is over!
-        import matplotlib
-        matplotlib.use('Agg')
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-        sns.set_theme()
-        
-        actions = self.locals.get("actions")
-        if actions is not None:
-            actions_np = np.asarray(actions)
-            n_actions = actions_np.shape[1]
-            
-            # Create a large, beautiful plot
-            fig, ax = plt.subplots(figsize=(12, 8))
-            
-            # Plot the smooth continuous Gaussian curve for every joint
-            for i in range(n_actions):
-                # kde=True generates the continuous Probability Density Function
-                sns.kdeplot(actions_np[:, i], fill=True, alpha=0.2, label=f"Joint {i}", bw_adjust=1.5)
-                
-            plt.title(f"Action Distribution (Continuous Gaussian PDF) at Final Step", fontsize=16)
-            plt.xlabel("Action Value (Position)", fontsize=14)
-            plt.ylabel("Probability Density", fontsize=14)
-            
-            # Put the legend outside the graph so it doesn't cover the curves
-            plt.legend(bbox_to_anchor=(1.05, 1), loc='best')
-            plt.tight_layout()
-            # Create a unique filename using the current date and time
-            timestamp = time.strftime("%Y%m%d_%H%M%S")
-            save_path = f"final_action_distributions_{args_cli.wandb_name}_{timestamp}.pdf"
 
-            plt.savefig(save_path, format="pdf", bbox_inches="tight")
-            # Send the high-res image to WandB
-            wandb.log({"action_distributions/Final_Smooth_Gaussians": wandb.Image(fig)})
-            
-            # Clean up RAM
-            plt.close(fig)
-            print("📊 Final Gaussian distributions uploaded to WandB!")
-
-# class SimpleActionRescale(gym.ActionWrapper):
-#     def __init__(self, env, action_range):
-#         super().__init__(env)
-#         # Manually define the new box to avoid the 'inf' assertion error
-#         self.action_space = gym.spaces.Box(
-#             low=-action_range, 
-#             high=action_range, 
-#             shape=self.env.action_space.shape, 
-#             dtype=np.float32
-#         )
-
-#     def action(self, action):
-#         # This is where you could add scaling logic if needed.
-#         # If your model is already outputting in the 'action_range', 
-#         # just return the action as-is.
-#         return action
-    
+   
 @hydra_task_config(args_cli.task, args_cli.agent)
 def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agent_cfg: dict):
     """Train with stable-baselines agent."""
@@ -270,6 +209,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     # directory for logging into
     run_info = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    if args_cli.wandb_name:
+        run_info = f"{args_cli.wandb_name}_{run_info}"
     log_root_path = os.path.abspath(os.path.join("logs", "sb3", args_cli.task))
     print(f"[INFO] Logging experiment in directory: {log_root_path}")
     # The Ray Tune workflow extracts experiment name using the logging line below, hence,
@@ -307,7 +248,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     #     env = SimpleActionRescale(env, args_cli.action_range)
     
     run = wandb.init(
-        project="sb3_self_eval",
+        project="comparisons",
         name=args_cli.wandb_name, 
         config=env_cfg,
         sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
@@ -335,15 +276,30 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     # wrap around environment for stable baselines
     env = Sb3VecEnvWrapper(env, fast_variant=not args_cli.keep_all_info)
 
-    if args_cli.algorithm == "sac":
-        env.action_space = gym.spaces.Box(
-            low=-args_cli.action_range, high=args_cli.action_range, shape=(12,), dtype=np.float32
+    if args_cli.algorithm == "sac" and args_cli.task == "isaaclab-a1-flat-v0":
+        # env.action_space = gym.spaces.Box( #his actions
+        #     low= np.array([-2.0, -0.4, -2.6, -1.3, -2.2, -1.9, -0.7, -0.4, -2.1, -2.4, -2.5, -1.7]), 
+        #     high=np.array([1.1, 2.6, 0.7, 1.9, 1.3, 2.6, 3.4, 3.8, 3.4, 3.4, 1.9, 2.1]), 
+        #     shape=(12,), dtype=np.float32
+        # )
+        env.action_space = gym.spaces.Box( # my actions
+            low= np.array([-0.99, -1.12, -0.97, -0.89, -1.35, -2.73, -0.87, -0.98, -1.58, -1.90, -1.70, -2.21]), 
+            high=np.array([1.49, 1.58, 1.57, 2.12, 1.46, 1.75, 1.80, 2.11, 1.77, 2.29, 1.70, 1.17]), 
+            shape=(12,), dtype=np.float32
+        )
+        print(f"[INFO] Action space: {env.action_space}")
+    if args_cli.algorithm == "sac" and args_cli.task == "robotlab-a1-flat-v0":
+        env.action_space = gym.spaces.Box( # my actions
+            low= np.array([-13.07, -12.50, -3.67, -13.50, -14.37, -3.51, -9.13, -5.38, -4.45, -11.73, -5.67, -3.41])*0.5, 
+            high=np.array([13.03, 17.21, 11.49, 18.36, 12.78, 9.45, 9.56, 6.36, 8.46, 11.41, 7.99, 7.53])*0.5, 
+            shape=(12,), dtype=np.float32
         )
         print(f"[INFO] Action space: {env.action_space}")
     if args_cli.ml_framework == "jax":
         agent_cfg["policy_kwargs"]["activation_fn"] = jax.nn.elu
-        if agent_cfg["policy_kwargs"]["optimizer_class"].lower() == "optax.adamw":
-            agent_cfg["policy_kwargs"]["optimizer_class"] = optax.adamw
+        if args_cli.algorithm.lower() == "sac" and "optimizer_class" in agent_cfg["policy_kwargs"]:
+            if agent_cfg["policy_kwargs"]["optimizer_class"] and agent_cfg["policy_kwargs"]["optimizer_class"].lower() == "optax.adamw":
+                agent_cfg["policy_kwargs"]["optimizer_class"] = optax.adamw
     
     norm_keys = {"normalize_input", "normalize_value", "clip_obs"}
     norm_args = {}
@@ -370,7 +326,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 
     checkpoint_callback = CheckpointCallback(save_freq=checkpoint_interval, save_path=log_dir, name_prefix="model", verbose=2)
     callbacks = [checkpoint_callback, 
-                 AdditionalLoggerCallback(),
+                 AdditionalLoggerCallback(log_dir=log_dir),
                  LogEveryNTimesteps(n_steps=args_cli.log_interval), 
                  WandbCallback(gradient_save_freq=10, 
                 #  model_save_path=f"models/{run.id}", 

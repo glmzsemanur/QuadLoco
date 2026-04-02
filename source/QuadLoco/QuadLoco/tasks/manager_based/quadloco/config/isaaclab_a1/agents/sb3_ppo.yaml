@@ -17,7 +17,7 @@ learning_rate: !!float 1e-3
 clip_range: !!float 0.2
 policy_kwargs:
   activation_fn: 'nn.ELU'
-  net_arch: [128, 128, 128]
+  net_arch: [512, 256, 128]
   optimizer_kwargs:
     eps: !!float 1e-8
   ortho_init: False

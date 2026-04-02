@@ -1,0 +1,1 @@
+python train.py --task=isaaclab-a1-flat-v0 --headless --algorithm=ppo --ml_framework=jax --action_range=100 --wandb_name=ppo_action_100_flat

@@ -16,11 +16,11 @@ from isaaclab.app import AppLauncher
 
 # --- 1. Argument Parsing ---
 parser = argparse.ArgumentParser(description="Optuna Pruning Tuner")
-parser.add_argument("--task", type=str, default="quadloco-a1-flat-v0", help="Task name.")
+parser.add_argument("--task", type=str, default="robotlab-a1-flat-v0", help="Task name.")
 parser.add_argument("--num_envs", type=int, default=4096, help="Environments.")
 parser.add_argument("--seed", type=int, default=42, help="Seed.")
-parser.add_argument("--action_range", type=float, default=1.0, help="Action range.")
-parser.add_argument("--wandb_project", type=str, default="sac_hardgatetuning", help="WandB project.")
+parser.add_argument("--action_range", type=float, default=20.0, help="Action range.")
+parser.add_argument("--wandb_project", type=str, default="sac_robotlab_softgatetuning", help="WandB project.")
 
 AppLauncher.add_app_launcher_args(parser)
 args_cli, hydra_args = parser.parse_known_args()
@@ -44,7 +44,7 @@ import QuadLoco.tasks
 from optuna.pruners import BasePruner
 class StaircasePruner(BasePruner):
     def __init__(self):
-        self.gates = {0: 25.0, 1: 32.0, 2: 32.0}
+        self.gates = {0: 0.0, 1: 10.0, 2: 10.0}
     def prune(self, study, trial):
         step = trial.last_step
         if step is None or step not in self.gates:
